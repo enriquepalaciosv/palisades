@@ -14,7 +14,6 @@ defineProps({
 <style lang="scss" scoped>
 .tl-section {
   @apply bg-orange text-white;
-  border: 5px solid white;
   height: 100vh;
 }
 </style>
