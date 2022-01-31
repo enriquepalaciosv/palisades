@@ -1,19 +1,18 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import items from "../data.js";
-gsap.registerPlugin(ScrollTrigger);
+
 import Hero from "./Hero.vue";
 import TimelineSection from "./TimelineSection.vue";
 import BackToTop from "./BackToTop.vue";
 
-// eslint-disable-next-line no-undef
-defineProps({
-  index: { type: Number, default: 0 },
-});
+const sectionClass = ref("");
+const setSectionClass = (newValue) => (sectionClass.value = newValue);
 
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.create({
     trigger: ".right-content",
     endTrigger: `#tl-section-${items.length - 1}`,
@@ -22,12 +21,16 @@ onMounted(() => {
   });
 
   items.forEach((item, index) => {
+    const section = index + 1;
     ScrollTrigger.create({
-      trigger: `#tl-section-${index + 1}`,
-      markers: true,
+      trigger: `#tl-section-${section}`,
+      markers: false,
       onEnter: () => {
-        // console.log(`Now in section #${index + 1}`);
+        setSectionClass(`section-${section}`);
       },
+      onEnterBack: () => {},
+      onLeave: () => {},
+      onLeaveBack: () => {},
     });
   });
 });
@@ -39,10 +42,7 @@ onMounted(() => {
     <div class="left-content">
       <TimelineSection v-for="(item, i) in items" :key="i" :index="i + 1" />
     </div>
-    <div
-      class="right-content"
-      :style="'background-image: url(section-1.png)'"
-    />
+    <div class="right-content" :class="sectionClass" />
   </div>
   <BackToTop />
 </template>
@@ -57,11 +57,16 @@ onMounted(() => {
     flex: 1;
   }
   .right-content {
-    @apply bg-blue-500;
     background-size: cover;
     background-repeat: no-repeat;
-
+    background-image: url("section-1.png");
     height: 100vh;
+
+    @for $i from 1 through 3 {
+      &.section-#{$i} {
+        background-image: url("section-"+#{$i}+".png");
+      }
+    }
   }
 }
 </style>

@@ -7,12 +7,6 @@ const dates = [
     },
     {
         title: "1943",
-    },
-    {
-        title: "1944",
-    },
-    {
-        title: "1945",
-    },
+    }
 ];
 export default dates;
