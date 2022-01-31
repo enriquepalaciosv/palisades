@@ -7,7 +7,7 @@ defineProps({
 
 <template>
   <div class="back-top">
-    <h1>GO BACK TO TOP</h1>
+    <a v-scroll-to="'#tl-section-0'" href="#">GO BACK TO TOP</a>
   </div>
 </template>
 

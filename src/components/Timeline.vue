@@ -1,4 +1,8 @@
 <script setup>
+import { onMounted } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import Hero from "./Hero.vue";
 import TimelineSection from "./TimelineSection.vue";
 import BackToTop from "./BackToTop.vue";
@@ -16,7 +20,22 @@ const items = [
   {
     title: "1943",
   },
+  {
+    title: "1944",
+  },
+  {
+    title: "1945",
+  },
 ];
+
+onMounted(() => {
+  ScrollTrigger.create({
+    trigger: ".right-content",
+    endTrigger: `#tl-section-${items.length - 1}`,
+    markers: false,
+    pin: true,
+  });
+});
 </script>
 
 <template>
@@ -37,17 +56,14 @@ const items = [
   display: flex;
   .left-content,
   .right-content {
-    flex: 0.5;
+    flex: 1;
   }
   .right-content {
     @apply bg-blue-500;
     background-image: url("../assets/images/section-1-0.png");
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 50%;
+
     height: 100vh;
   }
 }

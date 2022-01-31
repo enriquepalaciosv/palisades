@@ -13,6 +13,7 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "gsap": "^3.9.1",
     "vue": "^3.2.25",
     "vue-scrollto": "^2.20.0"
   },
