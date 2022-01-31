@@ -41,7 +41,7 @@ onMounted(() => {
     </div>
     <div
       class="right-content"
-      :style="'background-image: url(src/assets/images/section-1.png)'"
+      :style="'background-image: url(section-1.png)'"
     />
   </div>
   <BackToTop />
@@ -58,7 +58,6 @@ onMounted(() => {
   }
   .right-content {
     @apply bg-blue-500;
-    // background-image: url("../assets/images/section-1.png");
     background-size: cover;
     background-repeat: no-repeat;
 
