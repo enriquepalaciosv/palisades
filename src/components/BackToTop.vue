@@ -14,6 +14,6 @@ defineProps({
 <style lang="scss" scoped>
 .back-top {
   height: 300px;
-  @apply bg-gray text-white;
+  @apply bg-blue text-white;
 }
 </style>

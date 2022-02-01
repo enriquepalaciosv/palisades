@@ -62,7 +62,7 @@ onMounted(() => {
     background-image: url("section-1.png");
     height: 100vh;
 
-    @for $i from 1 through 3 {
+    @for $i from 1 through 30 {
       &.section-#{$i} {
         background-image: url("section-"+#{$i}+".png");
       }

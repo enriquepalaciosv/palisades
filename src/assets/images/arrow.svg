@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="93px" viewBox="0 0 18 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Arrow/Down</title>
+    <g id="Timeline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Palisades_Timeline_R2" transform="translate(-709.000000, -813.000000)" fill="#FF5E00" fill-rule="nonzero">
+            <g id="Top-Marquee" transform="translate(-2.000000, 75.000000)">
+                <path id="Arrow/Down" d="M721,738.535714 L721,824.468 L725.878424,815.795453 L726.368686,814.923878 L728.111837,815.9044 L727.621576,816.775976 L720.871576,828.775976 L720,830.325443 L719.128424,828.775976 L712.378424,816.775976 L711.888163,815.9044 L713.631314,814.923878 L714.121576,815.795453 L719,824.468 L719,738.535714 L721,738.535714 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>

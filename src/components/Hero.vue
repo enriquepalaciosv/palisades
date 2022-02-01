@@ -1,26 +1,62 @@
 <script setup>
+import VueScrollTo from "vue-scrollto";
 // eslint-disable-next-line no-undef
 defineProps({});
+import arrowImage from "../assets/images/arrow.svg";
+const goNext = () => {
+  VueScrollTo.scrollTo("#tl-section-1", 1000, {});
+};
 </script>
 
 <template>
   <section id="tl-section-0" class="tl-section">
-    <p class="font-headline text-8xl text-orange">Milestones</p>
-    <p class="font-wide font-bold text-white">PALISADES TAHOE</p>
-    <p class="font-text text-white text-xl">
+    <p class="main-headline">Milestones</p>
+    <p class="secondary-headline">PALISADES TAHOE</p>
+    <p class="text">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam.
     </p>
-    <p class="font-condensed text-white text-xl">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    </p>
+    <img class="arrow" :src="arrowImage" alt="arrow" @click="goNext()" />
   </section>
 </template>
 
 <style lang="scss" scoped>
 .tl-section {
-  @apply bg-gray text-white;
+  @apply text-white;
   height: 100vh;
+  background-image: url("../assets/images/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .main-headline {
+    @apply font-headline text-orange text-[175px];
+    letter-spacing: -1px;
+    line-height: 212px;
+  }
+
+  .secondary-headline {
+    @apply font-wide font-bold text-white text-[28px];
+    letter-spacing: 3.92px;
+    line-height: 30px;
+  }
+
+  .text {
+    @apply font-text text-white text-[18px];
+    letter-spacing: 0.56px;
+    line-height: 28px;
+    max-width: 596px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .arrow {
+    margin-top: 56px;
+    cursor: pointer;
+  }
 }
 </style>
