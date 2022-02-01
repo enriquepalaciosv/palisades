@@ -22,14 +22,28 @@ defineProps({
     </p>
     <div>
       <Divider />
+
       <div class="interactive-item">
         <div class="sub-headline">1844. Western Migration</div>
         <button class="cta">
           <img src="../assets/images/cross.svg" alt="cross" />
         </button>
       </div>
-      <Divider />
+
+      <div>
+        An early Western explorer named John C. Fremont climbed Red Lake Peak on
+        Carson Pass while on a mapping expedition and looked out at the distant
+        view of Lake Tahoe, the first reported non-Native to spot the area.
+        After that, the quest for gold and silver brought major western
+        migration and much development to the Lake Tahoe area, including the
+        building of the Central Pacific Railroad and massive deforestation for
+        timber. Cultures clashed, emigrants brought agriculture and western
+        property rights, and wars ensued. The Washoe people were forcibly pushed
+        from their ancestral range and ultimately divided into four communities:
+        Woodfords, Dresslerville, Stewart, and Carson Colony.
+      </div>
     </div>
+    <Divider />
   </div>
 </template>
 
