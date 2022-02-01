@@ -1,4 +1,5 @@
 <script setup>
+import Content from "./Content.vue";
 // eslint-disable-next-line no-undef
 defineProps({
   index: { type: Number, default: 0 },
@@ -7,13 +8,12 @@ defineProps({
 
 <template>
   <section :id="`tl-section-${index}`" class="tl-section">
-    <h1>Section {{ index }}</h1>
+    <Content />
   </section>
 </template>
 
 <style lang="scss" scoped>
 .tl-section {
-  @apply bg-orange text-white;
   height: 100vh;
 }
 </style>
