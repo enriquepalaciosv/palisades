@@ -30,7 +30,9 @@ onMounted(() => {
       },
       onEnterBack: () => {},
       onLeave: () => {},
-      onLeaveBack: () => {},
+      onLeaveBack: () => {
+        setSectionClass(`section-${section - 1}`);
+      },
     });
   });
 });
