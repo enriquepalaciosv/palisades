@@ -16,14 +16,14 @@ const state = reactive({
     <h1 class="headline">{{ content.title }}</h1>
     <transition name="slide-fade">
       <div v-if="state.active === 0" class="accordion-0">
-        <Divider />
+        <Divider v-if="content.description" />
         <p class="text">
           {{ content.description }}
         </p>
+        <Divider v-if="content.description" />
       </div>
     </transition>
     <div v-for="(item, index) in content.items" :key="index + 1">
-      <Divider />
       <div class="interactive-item">
         <div class="sub-headline">{{ item.itemTitle }}</div>
         <button
@@ -46,8 +46,8 @@ const state = reactive({
           {{ item.itemDescription }}
         </div>
       </transition>
+      <Divider />
     </div>
-    <Divider />
   </div>
 </template>
 
