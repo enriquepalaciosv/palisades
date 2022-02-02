@@ -72,7 +72,7 @@ onMounted(() => {
 
     @for $i from 1 through 30 {
       &.section-#{$i} {
-        background-image: url("section-"+#{$i}+".png");
+        background-image: url("../assets/images/section-"+#{$i}+".png");
       }
     }
   }
