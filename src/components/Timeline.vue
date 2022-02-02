@@ -42,7 +42,12 @@ onMounted(() => {
   <Hero />
   <div class="main-container">
     <div class="left-content">
-      <TimelineSection v-for="(item, i) in items" :key="i" :index="i + 1" />
+      <TimelineSection
+        v-for="(item, i) in items"
+        :key="i"
+        :index="i + 1"
+        :item="item"
+      />
     </div>
     <div class="right-content" :class="sectionClass" />
   </div>

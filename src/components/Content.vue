@@ -1,53 +1,67 @@
 <script setup>
+import { reactive } from "vue";
 import Divider from "./Divider.vue";
 // eslint-disable-next-line no-undef
 defineProps({
-  headline: { type: String, default: "" },
+  content: { type: Object, default: () => {} },
+});
+
+const state = reactive({
+  active: 0,
 });
 </script>
 
 <template>
   <div class="container">
-    <h1 class="headline">9,000 Years Ago: The Area's First Inhabitants</h1>
-    <Divider />
-    <p class="text">
-      An indigenous Native American people, the Washoe Tribe inhabited lands
-      around Lake Tahoe dating back thousands of years. They hunted, gathered,
-      and traveled on hand-hewn snowshoes in the winter months. Their tribe name
-      comes from the Washoe word, Wašiw, meaning “people from here.” The Washoe
-      first called Lake Tahoe “Da ow ga,” the Washoe word for “lake,” which is
-      thought to be the source for the name Lake Tahoe. Da ow aga is central to
-      the tribe's identity and is still considered the tribe's most sacred
-      place.
-    </p>
-    <div>
+    <h1 class="headline">{{ content.title }}</h1>
+    <transition name="slide-fade">
+      <div v-if="state.active === 0" class="accordion-0">
+        <Divider />
+        <p class="text">
+          {{ content.description }}
+        </p>
+      </div>
+    </transition>
+    <div v-for="(item, index) in content.items" :key="index + 1">
       <Divider />
-
       <div class="interactive-item">
-        <div class="sub-headline">1844. Western Migration</div>
-        <button class="cta">
+        <div class="sub-headline">{{ item.itemTitle }}</div>
+        <button
+          v-if="state.active !== index + 1"
+          class="cta"
+          @click="state.active = index + 1"
+        >
           <img src="../assets/images/cross.svg" alt="cross" />
         </button>
+        <button
+          v-if="state.active === index + 1"
+          class="cta active"
+          @click="state.active = 0"
+        >
+          <img src="../assets/images/minus.svg" alt="close" />
+        </button>
       </div>
-
-      <div>
-        An early Western explorer named John C. Fremont climbed Red Lake Peak on
-        Carson Pass while on a mapping expedition and looked out at the distant
-        view of Lake Tahoe, the first reported non-Native to spot the area.
-        After that, the quest for gold and silver brought major western
-        migration and much development to the Lake Tahoe area, including the
-        building of the Central Pacific Railroad and massive deforestation for
-        timber. Cultures clashed, emigrants brought agriculture and western
-        property rights, and wars ensued. The Washoe people were forcibly pushed
-        from their ancestral range and ultimately divided into four communities:
-        Woodfords, Dresslerville, Stewart, and Carson Colony.
-      </div>
+      <transition name="slide-fade">
+        <div v-if="state.active === index + 1" class="pb-8 accordion-1">
+          {{ item.itemDescription }}
+        </div>
+      </transition>
     </div>
     <Divider />
   </div>
 </template>
 
 <style lang="scss" scoped>
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
 .container {
   @apply flex flex-col max-w-[486px] text-blue;
   .headline {
@@ -66,6 +80,9 @@ defineProps({
 
   .cta {
     @apply bg-orange text-white w-[78px] h-[35px] rounded-[25px] flex justify-center items-center drop-shadow-xl;
+    &.active {
+      @apply bg-white;
+    }
   }
 }
 </style>
