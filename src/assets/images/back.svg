@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="83px" height="83px" viewBox="0 0 83 83" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Button/Back</title>
+    <defs>
+        <circle id="path-1" cx="32.5" cy="32.5" r="32.5"></circle>
+        <filter x="-24.6%" y="-32.3%" width="149.2%" height="149.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Timeline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Palisades_Timeline_R2" transform="translate(-679.000000, -16725.000000)">
+            <g id="Back-to-Top" transform="translate(0.000000, 16465.000000)">
+                <g id="Button/Back" transform="translate(720.500000, 296.500000) rotate(-180.000000) translate(-720.500000, -296.500000) translate(688.000000, 264.000000)">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FF5E00" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <path id="Line-3-Copy-5" d="M33,17.8452381 L32.999,45.179 L36.5642122,38.8402248 L36.8093429,38.4044371 L37.6809184,38.8946983 L37.4357878,39.3304861 L32.9357878,47.3304861 L32.5,48.1052199 L32.0642122,47.3304861 L27.5642122,39.3304861 L27.3190816,38.8946983 L28.1906571,38.4044371 L28.4357878,38.8402248 L31.999,45.175 L32,17.8452381 L33,17.8452381 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
