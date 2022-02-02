@@ -24,7 +24,8 @@ onMounted(() => {
     const section = index + 1;
     ScrollTrigger.create({
       trigger: `#tl-section-${section}`,
-      markers: false,
+      start: "top 80%",
+      markers: true,
       onEnter: () => {
         setSectionClass(`section-${section}`);
       },

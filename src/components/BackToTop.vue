@@ -14,6 +14,6 @@ defineProps({
 <style lang="scss" scoped>
 .back-top {
   height: 300px;
-  @apply bg-blue text-white;
+  @apply bg-blue text-white flex justify-center items-center;
 }
 </style>
