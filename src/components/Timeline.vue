@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, reactive } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import items from "../data.js";
@@ -7,6 +7,11 @@ import items from "../data.js";
 import Hero from "./Hero.vue";
 import TimelineSection from "./TimelineSection.vue";
 import BackToTop from "./BackToTop.vue";
+import Navigation from "./Navigation.vue";
+
+const state = reactive({
+  active: 0,
+});
 
 const sectionClass = ref("");
 const setSectionClass = (newValue) => (sectionClass.value = newValue);
@@ -25,14 +30,16 @@ onMounted(() => {
     ScrollTrigger.create({
       trigger: `#tl-section-${section}`,
       start: "top 80%",
-      markers: true,
+      markers: false,
       onEnter: () => {
         setSectionClass(`section-${section}`);
+        state.active = index;
       },
       onEnterBack: () => {},
       onLeave: () => {},
       onLeaveBack: () => {
         setSectionClass(`section-${section - 1}`);
+        state.active = index - 1;
       },
     });
   });
@@ -43,6 +50,7 @@ onMounted(() => {
   <Hero />
   <div class="main-container">
     <div class="left-content">
+      <Navigation :items="items" :active="state.active" />
       <TimelineSection
         v-for="(item, i) in items"
         :key="i"

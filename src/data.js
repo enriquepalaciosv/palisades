@@ -1,5 +1,6 @@
 const dates = [
     {
+        year: 0,
         title: "9,000 Years Ago: The Area's First Inhabitants",
         description: "An indigenous Native American people, the Washoe Tribe inhabited lands around Lake Tahoe dating back thousands of years. They hunted, gathered, and traveled on hand-hewn snowshoes in the winter months. Their tribe name comes from the Washoe word, Wašiw, meaning “people from here.” The Washoe first called Lake Tahoe “Da ow ga,” the Washoe word for “lake,” which is thought to be the source for the name Lake Tahoe. Da ow aga is central to the tribe's identity and is still considered the tribe's most sacred place.",
         items: [
@@ -10,10 +11,12 @@ const dates = [
         ]
     },
     {
+        year: 1993,
         title: "1939. The Poulsens and the Cushings",
         description: "Originally from the Bay Area, Wayne Poulsen spends his youth ski jumping and touring in the Sierra Nevada, working with Dr. Frank Church as a snow hydrographer, jumping in early ski competitions, and eventually helping to start the University of Nevada, Reno’s ski team. After helping to start the ski area now known as Sky Tavern, Poulsen ventured further into the Sierra and fell in love with the stunning valley known as Squaw Valley. In 1939, Poulsen secures an option to buy land in the valley from the Southern Pacific Railroad, and by the mid-1940s, together with his wife, Sandy, the Poulsens build a home to raise their family and pursue their dream of developing Squaw Valley. Poulsen meets Alexander Cushing, an East Coast businessman, while on a ski trip at Alta in 1945, and the two partner, with Poulsen as the expert and Cushing as the financier.",
     },
     {
+        year: 1943,
         title: "1943. The Naming of KT-22",
         description: "Sandy and Wayne Poulsen strap skins to their skis to climb and ski the snow-covered peaks surrounding their home. One of those peaks is so steep, Sandy does 22 kick-turns to make her way down the precipitous north-facing slope. They name the peak KT-22, which will eventually become the site of one of the most legendary chairlifts in North America.",
         items: [
@@ -28,6 +31,20 @@ const dates = [
         ]
     },
     {
+        year: 1960,
+        title: "1960"
+    },
+    {
+        year: 1961,
+        title: "1961"
+    },
+    {
+        year: 1975,
+        title: "1975"
+    },
+    {
+        year: 1979,
+        title: "1979",
         items: [
             {
                 itemTitle: "1975. The Controversy of Silverado Lift",
@@ -42,6 +59,38 @@ const dates = [
                 itemDescription: "Lorem Ipsum"
             },
         ]
+    },
+    {
+        year: 1988,
+        title: "1988"
+    },
+    {
+        year: 1991,
+        title: "1991"
+    },
+    {
+        year: 1998,
+        title: "1988"
+    },
+    {
+        year: 2002,
+        title: "2002"
+    },
+    {
+        year: 2011,
+        title: "2011"
+    },
+    {
+        year: 2016,
+        title: "2016"
+    },
+    {
+        year: 2017,
+        title: "2017"
+    },
+    {
+        year: 2018,
+        title: "2018"
     },
 
 ];
