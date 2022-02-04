@@ -1,11 +1,40 @@
 <script setup>
+/* eslint-disable no-undef */
+import { onMounted } from "vue";
+import gsap from "gsap";
 import VueScrollTo from "vue-scrollto";
-// eslint-disable-next-line no-undef
+
 defineProps({});
 import arrowImage from "../assets/images/arrow.svg";
 const goNext = () => {
   VueScrollTo.scrollTo("#tl-section-1", 1000, {});
 };
+
+let tl = gsap.timeline();
+
+onMounted(() => {
+  gsap.fromTo(
+    "#tl-section-0",
+    {
+      backgroundSize: "110%",
+      backgroundPositionX: "2%",
+    },
+    {
+      backgroundSize: "100%",
+      backgroundPositionX: "0%",
+      duration: 7,
+    }
+  );
+
+  tl.fromTo(
+    ".main-headline",
+    { opacity: 0 },
+    { opacity: 1, delay: 1, duration: 1 }
+  );
+  tl.fromTo(".secondary-headline", { opacity: 0 }, { opacity: 1 });
+  tl.fromTo(".text", { opacity: 0 }, { opacity: 1 });
+  tl.fromTo(".arrow", { opacity: 0 }, { opacity: 1 });
+});
 </script>
 
 <template>
