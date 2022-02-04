@@ -1,14 +1,24 @@
 <script setup>
+/* eslint-disable no-undef */
 import { reactive } from "vue";
 import Divider from "./Divider.vue";
+import VueScrollTo from "vue-scrollto";
+import data from "../data";
 // eslint-disable-next-line no-undef
-defineProps({
+const props = defineProps({
   content: { type: Object, default: () => {} },
+  contentIndex: { type: Number, default: 0 },
 });
+
+const goTo = (index) => {
+  VueScrollTo.scrollTo(`#tl-section-${index}`, 1000, {});
+};
 
 const state = reactive({
   active: 0,
 });
+
+const next = data[props.contentIndex];
 </script>
 
 <template>
@@ -48,6 +58,10 @@ const state = reactive({
       </transition>
       <Divider />
     </div>
+    <div v-if="next" class="year-button" @click="goTo(contentIndex + 1)">
+      <img src="../assets/images/year-button.svg" alt="next year" />
+      <span class="year">{{ next.year }}</span>
+    </div>
   </div>
 </template>
 
@@ -82,6 +96,18 @@ const state = reactive({
     @apply bg-orange text-white w-[78px] h-[35px] rounded-[25px] flex justify-center items-center drop-shadow-xl;
     &.active {
       @apply bg-white;
+    }
+  }
+  .year-button {
+    @apply font-condensed text-gray text-[14px] leading-[14px] tracking-[0.88px];
+    margin-top: 40px;
+    position: relative;
+    width: 78px;
+    cursor: pointer;
+    .year {
+      position: absolute;
+      top: 45%;
+      left: 33%;
     }
   }
 }

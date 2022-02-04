@@ -11,7 +11,7 @@ const dates = [
         ]
     },
     {
-        year: 1993,
+        year: 1939,
         title: "1939. The Poulsens and the Cushings",
         description: "Originally from the Bay Area, Wayne Poulsen spends his youth ski jumping and touring in the Sierra Nevada, working with Dr. Frank Church as a snow hydrographer, jumping in early ski competitions, and eventually helping to start the University of Nevada, Reno’s ski team. After helping to start the ski area now known as Sky Tavern, Poulsen ventured further into the Sierra and fell in love with the stunning valley known as Squaw Valley. In 1939, Poulsen secures an option to buy land in the valley from the Southern Pacific Railroad, and by the mid-1940s, together with his wife, Sandy, the Poulsens build a home to raise their family and pursue their dream of developing Squaw Valley. Poulsen meets Alexander Cushing, an East Coast businessman, while on a ski trip at Alta in 1945, and the two partner, with Poulsen as the expert and Cushing as the financier.",
     },

@@ -13,7 +13,8 @@ module.exports = {
       },
       colors: {
         orange: "#FF5E00",
-        blue: "#201547"
+        blue: "#201547",
+        gray: "#78748E"
       }
     },
   },

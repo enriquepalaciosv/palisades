@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <section :id="`tl-section-${index}`" class="tl-section">
-    <Content :content="item" />
+    <Content :content="item" :content-index="index" />
   </section>
 </template>
 
