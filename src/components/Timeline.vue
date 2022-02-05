@@ -2,10 +2,11 @@
 import { onMounted, ref, reactive } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { firstBundle, navigation } from "../data.js";
+import { navigation, firstBundle, firstWide } from "../data.js";
 
 import Hero from "./Hero.vue";
 import TimelineSection from "./TimelineSection.vue";
+import TimelineWideSection from "./TimelineWideSection.vue";
 import BackToTop from "./BackToTop.vue";
 import Navigation from "./Navigation.vue";
 
@@ -40,6 +41,7 @@ onMounted(() => {
   ScrollTrigger.create({
     trigger: ".right-content",
     endTrigger: `#tl-section-7`,
+    end: "top 100%",
     markers: false,
     pin: true,
   });
@@ -77,18 +79,14 @@ onMounted(() => {
   <div class="main-container">
     <div class="left-content">
       <Navigation :items="navigation" :active="state.active" />
-      <TimelineSection
-        v-for="(item, i) in firstBundle"
-        :key="i"
-        :index="i + 1"
-        :item="item"
-      />
+      <TimelineSection v-for="(item, i) in firstBundle" :key="i" :item="item" />
     </div>
     <div class="right-content">
       <img :src="state.currentImage" alt="current" />
       <img :src="state.nextImage" alt="next" class="img2" />
     </div>
   </div>
+  <TimelineWideSection :item="firstWide" />
   <BackToTop />
 </template>
 
