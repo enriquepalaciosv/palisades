@@ -11,10 +11,28 @@ import Navigation from "./Navigation.vue";
 
 const state = reactive({
   active: 0,
+  currentImage: new URL(`../assets/images/section-1.png`, import.meta.url),
+  nextImage: new URL(`../assets/images/section-2.png`, import.meta.url),
 });
 
 const sectionClass = ref("");
 const setSectionClass = (newValue) => (sectionClass.value = newValue);
+
+const playTransition = (image) => {
+  // Reveal next image
+  const next = new URL(`../assets/images/${image}`, import.meta.url);
+  state.nextImage = next;
+  gsap.to(".img2", {
+    opacity: 1,
+    onComplete: () => {
+      // Reset: next becomes current
+      setTimeout(() => {
+        state.currentImage = next;
+        gsap.to(".img2", { opacity: 0 });
+      }, 500);
+    },
+  });
+};
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);
@@ -34,12 +52,19 @@ onMounted(() => {
       onEnter: () => {
         setSectionClass(`section-${section}`);
         state.active = index;
+
+        if (section > 1) {
+          playTransition(`section-${section}.png`);
+        }
       },
       onEnterBack: () => {},
       onLeave: () => {},
       onLeaveBack: () => {
         setSectionClass(`section-${section - 1}`);
         state.active = index - 1;
+        if (section > 1) {
+          playTransition(`section-${section - 1}.png`);
+        }
       },
     });
   });
@@ -58,7 +83,10 @@ onMounted(() => {
         :item="item"
       />
     </div>
-    <div class="right-content" :class="sectionClass" />
+    <div class="right-content">
+      <img :src="state.currentImage" alt="current" />
+      <img :src="state.nextImage" alt="next" class="img2" />
+    </div>
   </div>
   <BackToTop />
 </template>
@@ -82,6 +110,26 @@ onMounted(() => {
       &.section-#{$i} {
         background-image: url("../assets/images/section-"+#{$i}+".png");
       }
+    }
+
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .img2 {
+      opacity: 0;
+      -webkit-transition: opacity 500ms ease-in-out;
+      -moz-transition: opacity 500ms ease-in-out;
+      -ms-transition: opacity 500ms ease-in-out;
+      -o-transition: opacity 500ms ease-in-out;
+      transition: opacity 500ms ease-in-out;
     }
   }
 }
