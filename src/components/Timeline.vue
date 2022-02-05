@@ -2,7 +2,7 @@
 import { onMounted, ref, reactive } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import items from "../data.js";
+import { firstBundle, navigation } from "../data.js";
 
 import Hero from "./Hero.vue";
 import TimelineSection from "./TimelineSection.vue";
@@ -36,14 +36,15 @@ const playTransition = (image) => {
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);
+
   ScrollTrigger.create({
     trigger: ".right-content",
-    endTrigger: `#tl-section-${items.length - 1}`,
+    endTrigger: `#tl-section-7`,
     markers: false,
     pin: true,
   });
 
-  items.forEach((item, index) => {
+  firstBundle.forEach((item, index) => {
     const section = index + 1;
     ScrollTrigger.create({
       trigger: `#tl-section-${section}`,
@@ -75,9 +76,9 @@ onMounted(() => {
   <Hero />
   <div class="main-container">
     <div class="left-content">
-      <Navigation :items="items" :active="state.active" />
+      <Navigation :items="navigation" :active="state.active" />
       <TimelineSection
-        v-for="(item, i) in items"
+        v-for="(item, i) in firstBundle"
         :key="i"
         :index="i + 1"
         :item="item"
