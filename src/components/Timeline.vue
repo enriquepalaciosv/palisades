@@ -2,7 +2,7 @@
 import { onMounted, ref, reactive } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { navigation, firstBundle, firstWide } from "../data.js";
+import { navigation, firstBundle, firstWide, secondBundle } from "../data.js";
 
 import Hero from "./Hero.vue";
 import TimelineSection from "./TimelineSection.vue";
@@ -71,6 +71,25 @@ onMounted(() => {
       },
     });
   });
+
+  const pingScroll = () => {
+    ScrollTrigger.create({
+      trigger: ".right-content-2",
+      endTrigger: `#tl-section-10`,
+      end: "top 0%",
+      markers: false,
+      pin: true,
+    });
+  };
+
+  ScrollTrigger.create({
+    trigger: "#tl-section-8",
+    start: "top 0%",
+    onEnter: () => {
+      pingScroll();
+    },
+    markers: false,
+  });
 });
 </script>
 
@@ -87,6 +106,20 @@ onMounted(() => {
     </div>
   </div>
   <TimelineWideSection :item="firstWide" />
+  <div class="main-container">
+    <div class="left-content-2">
+      <TimelineSection
+        v-for="(item, i) in secondBundle"
+        :key="i"
+        :item="item"
+      />
+    </div>
+    <div class="right-content-2">
+      <img :src="state.currentImage" alt="current" />
+      <img :src="state.nextImage" alt="next" class="img2" />
+    </div>
+  </div>
+
   <BackToTop />
 </template>
 
@@ -96,10 +129,13 @@ onMounted(() => {
 
   display: flex;
   .left-content,
-  .right-content {
+  .left-content-2,
+  .right-content,
+  .right-content-2 {
     flex: 1;
   }
-  .right-content {
+  .right-content,
+  .right-content-2 {
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("section-1.png");
