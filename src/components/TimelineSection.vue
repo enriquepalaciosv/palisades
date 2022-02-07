@@ -2,14 +2,13 @@
 import Content from "./Content.vue";
 // eslint-disable-next-line no-undef
 defineProps({
-  index: { type: Number, default: 0 },
   item: { type: Object, default: () => {} },
 });
 </script>
 
 <template>
-  <section :id="`tl-section-${index}`" class="tl-section">
-    <Content :content="item" :content-index="index" />
+  <section :id="`tl-section-${item.id}`" class="tl-section">
+    <Content :content="item" :content-index="item.id" />
   </section>
 </template>
 
