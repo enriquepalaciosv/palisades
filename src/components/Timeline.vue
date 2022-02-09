@@ -1,23 +1,29 @@
 <script setup>
-import { onMounted, ref, reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { navigation, firstBundle, firstWide, secondBundle } from "../data.js";
+import {
+  navigation,
+  firstBundle,
+  firstWide,
+  secondBundle,
+  wideBundle,
+  lastSingle,
+  lastWide,
+} from "../data.js";
 
 import Hero from "./Hero.vue";
 import TimelineSection from "./TimelineSection.vue";
 import TimelineWideSection from "./TimelineWideSection.vue";
 import BackToTop from "./BackToTop.vue";
 import Navigation from "./Navigation.vue";
+import firstImage from "../assets/images/section-1.png";
 
 const state = reactive({
   active: 0,
   currentImage: new URL(`../assets/images/section-1.png`, import.meta.url),
   nextImage: new URL(`../assets/images/section-2.png`, import.meta.url),
 });
-
-const sectionClass = ref("");
-const setSectionClass = (newValue) => (sectionClass.value = newValue);
 
 const playTransition = (image) => {
   // Reveal next image
@@ -45,27 +51,25 @@ onMounted(() => {
     markers: false,
     pin: true,
   });
+  // Sections wont' require transition because they're not pinned
+  const notAnimated = [1, 7, 11, 12, 13];
 
-  firstBundle.forEach((item, index) => {
+  navigation.forEach((item, index) => {
     const section = index + 1;
+    const shouldAnimate = !notAnimated.find((na) => section === na);
     ScrollTrigger.create({
       trigger: `#tl-section-${section}`,
       start: "top 80%",
       markers: false,
       onEnter: () => {
-        setSectionClass(`section-${section}`);
         state.active = index;
-
-        if (section > 1) {
+        if (shouldAnimate) {
           playTransition(`section-${section}.png`);
         }
       },
-      onEnterBack: () => {},
-      onLeave: () => {},
       onLeaveBack: () => {
-        setSectionClass(`section-${section - 1}`);
         state.active = index - 1;
-        if (section > 1) {
+        if (shouldAnimate) {
           playTransition(`section-${section - 1}.png`);
         }
       },
@@ -95,13 +99,13 @@ onMounted(() => {
 
 <template>
   <Hero />
+  <Navigation :items="navigation" :active="state.active" />
   <div class="main-container">
     <div class="left-content">
-      <Navigation :items="navigation" :active="state.active" />
       <TimelineSection v-for="(item, i) in firstBundle" :key="i" :item="item" />
     </div>
     <div class="right-content">
-      <img :src="state.currentImage" alt="current" />
+      <img :src="state.currentImage || firstImage" alt="current" />
       <img :src="state.nextImage" alt="next" class="img2" />
     </div>
   </div>
@@ -119,7 +123,17 @@ onMounted(() => {
       <img :src="state.nextImage" alt="next" class="img2" />
     </div>
   </div>
-
+  <TimelineWideSection v-for="(item, i) in wideBundle" :key="i" :item="item" />
+  <div class="main-container">
+    <div class="left-content-3">
+      <TimelineSection :item="lastSingle" />
+    </div>
+    <div class="right-content-3">
+      <img :src="state.currentImage || firstImage" alt="current" />
+      <img :src="state.nextImage" alt="next" class="img2" />
+    </div>
+  </div>
+  <TimelineWideSection :item="lastWide" />
   <BackToTop />
 </template>
 
@@ -130,23 +144,16 @@ onMounted(() => {
   display: flex;
   .left-content,
   .left-content-2,
+  .left-content-3,
   .right-content,
-  .right-content-2 {
+  .right-content-2,
+  .right-content-3 {
     flex: 1;
   }
   .right-content,
-  .right-content-2 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("section-1.png");
+  .right-content-2,
+  .right-content-3 {
     height: 100vh;
-
-    @for $i from 1 through 30 {
-      &.section-#{$i} {
-        background-image: url("../assets/images/section-"+#{$i}+".png");
-      }
-    }
-
     position: relative;
 
     img {

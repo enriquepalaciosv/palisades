@@ -12,16 +12,16 @@ const state = reactive({
   fullWidth: false,
 });
 
-const toggle = () => {
+const toggle = (id) => {
   state.fullWidth = !state.fullWidth;
   if (state.fullWidth) {
-    gsap.to(".left", { opacity: 0 });
-    gsap.to(".left", { flex: 0 });
-    gsap.to(".left", { display: "none" });
+    gsap.to(`.left-section-${id}`, { opacity: 0 });
+    gsap.to(`.left-section-${id}`, { flex: 0 });
+    gsap.to(`.left-section-${id}`, { display: "none" });
   } else {
-    gsap.to(".left", { display: "flex" });
-    gsap.to(".left", { opacity: 1 });
-    gsap.to(".left", { flex: 1 });
+    gsap.to(`.left-section-${id}`, { display: "flex" });
+    gsap.to(`.left-section-${id}`, { opacity: 1 });
+    gsap.to(`.left-section-${id}`, { flex: 1 });
   }
   VueScrollTo.scrollTo(`#tl-section-${props.item.id}`, 1000, {});
 };
@@ -30,11 +30,11 @@ const toggle = () => {
 <template>
   <section :id="`tl-section-${item.id}`" class="tl-section">
     <div class="text-image-container">
-      <div class="left">
+      <div class="left" :class="`left-section-${item.id}`">
         <Content :content="item" :content-index="item.id" />
       </div>
       <div class="right" :class="`tl-section-${item.id}`">
-        <button class="toggler" @click="toggle()">
+        <button class="toggler" @click="toggle(item.id)">
           <img src="../assets/images/fullscreen.svg" alt="expand/collapse" />
         </button>
       </div>
@@ -57,6 +57,26 @@ const toggle = () => {
       position: relative;
       &.tl-section-7 {
         background-image: url("../assets/images/section-7.png");
+        background-size: cover;
+        background-position: center;
+      }
+      &.tl-section-11 {
+        background-image: url("../assets/images/section-11.png");
+        background-size: cover;
+        background-position: center;
+      }
+      &.tl-section-12 {
+        background-image: url("../assets/images/section-12.png");
+        background-size: cover;
+        background-position: center;
+      }
+      &.tl-section-13 {
+        background-image: url("../assets/images/section-13.png");
+        background-size: cover;
+        background-position: center;
+      }
+      &.tl-section-15 {
+        background-image: url("../assets/images/section-15.png");
         background-size: cover;
         background-position: center;
       }
