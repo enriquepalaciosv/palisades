@@ -3,7 +3,7 @@
 import { reactive } from "vue";
 import Divider from "./Divider.vue";
 import VueScrollTo from "vue-scrollto";
-import data from "../data";
+import { navigation } from "../data";
 // eslint-disable-next-line no-undef
 const props = defineProps({
   content: { type: Object, default: () => {} },
@@ -18,7 +18,7 @@ const state = reactive({
   active: 0,
 });
 
-const next = data[props.contentIndex];
+const next = navigation[props.contentIndex];
 </script>
 
 <template>
