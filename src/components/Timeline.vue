@@ -99,7 +99,11 @@ onMounted(() => {
 
 <template>
   <Hero />
-  <Navigation :items="navigation" :active="state.active" />
+  <Navigation
+    v-if="state.active >= 0"
+    :items="navigation"
+    :active="state.active"
+  />
   <div class="main-container">
     <div class="left-content">
       <TimelineSection v-for="(item, i) in firstBundle" :key="i" :item="item" />

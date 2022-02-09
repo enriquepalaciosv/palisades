@@ -37,10 +37,17 @@ const goTo = (index) => {
   position: fixed;
   top: 10%;
   left: 0;
-  width: 120px;
   max-height: 100vh;
   display: flex;
   justify-content: center;
+  z-index: 3;
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 120px;
+  }
 
   .item {
     .text {
