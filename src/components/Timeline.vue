@@ -159,6 +159,10 @@ onMounted(() => {
   .right-content-3 {
     height: 100vh;
     position: relative;
+    display: none;
+    @media screen and (min-width: 1200px) {
+      display: flex;
+    }
 
     img {
       position: absolute;

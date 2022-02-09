@@ -55,6 +55,11 @@ const toggle = (id) => {
       @apply flex-1;
       height: 100vh;
       position: relative;
+      display: none;
+      @media screen and (min-width: 1200px) {
+        display: flex;
+      }
+
       &.tl-section-7 {
         background-image: url("../assets/images/section-7.png");
         background-size: cover;

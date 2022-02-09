@@ -53,7 +53,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .tl-section {
   @apply text-white;
-  height: 100vh;
+
   background-image: url("../assets/images/hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,9 +61,12 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 1200px) {
+    height: 100vh;
+  }
 
   .main-headline {
-    @apply font-headline text-orange text-[175px];
+    @apply font-headline text-orange sm:text-[175px] lg:text-[175px];
     letter-spacing: -1px;
     line-height: 212px;
   }
