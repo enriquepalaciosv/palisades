@@ -20,7 +20,7 @@ import Navigation from "./Navigation.vue";
 import firstImage from "../assets/images/section-1.png";
 
 const state = reactive({
-  active: 0,
+  active: -1,
   currentImage: new URL(`../assets/images/section-1.png`, import.meta.url),
   nextImage: new URL(`../assets/images/section-2.png`, import.meta.url),
 });
@@ -100,7 +100,7 @@ onMounted(() => {
 <template>
   <Hero />
   <Navigation
-    v-if="state.active >= 0"
+    v-if="state.active > -1"
     :items="navigation"
     :active="state.active"
   />
