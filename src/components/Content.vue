@@ -19,6 +19,16 @@ const state = reactive({
 });
 
 const next = navigation[props.contentIndex];
+
+const changeActive = (item, index) => {
+  state.active = index + 1;
+  // $emit("imageSwap", item.itemImage);
+  // TODO: take a look at mitt
+};
+
+const reset = () => {
+  state.active = 0;
+};
 </script>
 
 <template>
@@ -42,14 +52,14 @@ const next = navigation[props.contentIndex];
         <button
           v-if="state.active !== index + 1"
           class="cta"
-          @click="state.active = index + 1"
+          @click="changeActive(item, index)"
         >
           <img src="../assets/images/cross.svg" alt="cross" />
         </button>
         <button
           v-if="state.active === index + 1"
           class="cta active"
-          @click="state.active = 0"
+          @click="reset()"
         >
           <img src="../assets/images/minus.svg" alt="close" />
         </button>
