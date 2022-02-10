@@ -52,15 +52,20 @@ const next = navigation[props.contentIndex];
         </button>
       </div>
       <transition name="slide-fade">
-        <div v-if="state.active === index + 1" class="pb-8 accordion-1">
+        <div
+          v-if="state.active === index + 1"
+          class="item-description pb-8 accordion-1"
+        >
           {{ item.itemDescription }}
         </div>
       </transition>
       <Divider />
     </div>
-    <div v-if="next" class="year-button" @click="goTo(contentIndex + 1)">
-      <img src="../assets/images/year-button.svg" alt="next year" />
-      <span class="year">{{ next.year }}</span>
+    <div class="year-navigation-container">
+      <div v-if="next" class="year-button" @click="goTo(contentIndex + 1)">
+        <img src="../assets/images/year-button.svg" alt="next year" />
+        <span class="year">{{ next.year }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -77,9 +82,9 @@ const next = navigation[props.contentIndex];
 }
 
 .container {
-  @apply flex flex-col max-w-[486px] text-blue;
+  @apply flex flex-col max-w-[486px] text-blue px-[16px];
   .headline {
-    @apply font-headline font-light text-[60px] mb-10 leading-[64px] tracking-[0px];
+    @apply font-headline font-light text-[28px] mb-10 leading-[32px] tracking-[0px] lg:text-[60px] lg:mb-10 lg:leading-[64px];
   }
   .text {
     @apply font-text text-[14px] leading-[24px] tracking-[0.5px] my-6;
@@ -89,7 +94,10 @@ const next = navigation[props.contentIndex];
   }
 
   .sub-headline {
-    @apply font-headline font-light text-[28px] leading-[34px] tracking-[0.54px] my-6 flex;
+    @apply font-headline font-light text-[16px] leading-[28px] tracking-[0px] lg:text-[28px] lg:leading-[34px] lg:tracking-[0.54px] my-6 flex;
+  }
+  .item-description {
+    @apply font-text text-[14px] tracking-[-0.2px] leading-[24px] lg:tracking-[0.5px];
   }
 
   .cta {
@@ -98,16 +106,19 @@ const next = navigation[props.contentIndex];
       @apply bg-white;
     }
   }
-  .year-button {
-    @apply font-condensed text-gray text-[14px] leading-[14px] tracking-[0.88px];
-    margin-top: 40px;
-    position: relative;
-    width: 78px;
-    cursor: pointer;
-    .year {
-      position: absolute;
-      top: 45%;
-      left: 33%;
+  .year-navigation-container {
+    @apply flex justify-center lg:justify-start;
+    .year-button {
+      @apply font-condensed text-gray text-[14px] leading-[14px] tracking-[0.88px];
+      margin-top: 40px;
+      position: relative;
+      width: 78px;
+      cursor: pointer;
+      .year {
+        position: absolute;
+        top: 45%;
+        left: 33%;
+      }
     }
   }
 }
