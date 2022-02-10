@@ -51,7 +51,7 @@ const toggle = (id) => {
 <style lang="scss" scoped>
 .tl-section {
   width: 100%;
-  height: 100vh;
+  @apply h-auto lg:h-[100vh];
   .text-image-container {
     @apply flex;
     .left {
