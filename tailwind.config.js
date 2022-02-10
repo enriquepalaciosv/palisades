@@ -9,7 +9,8 @@ module.exports = {
         headline: ['TiemposHeadline', 'serif'],
         text: ['TiemposText', 'serif'],
         condensed: ['GraphikCond', 'sans-serif'],
-        wide: ['GraphikWide', 'sans-serif']
+        wide: ['GraphikWide', 'sans-serif'],
+        caption: ['Graphik', 'sans-serif'],
       },
       colors: {
         orange: "#FF5E00",

@@ -111,6 +111,10 @@ onMounted(() => {
     <div class="right-content">
       <img :src="state.currentImage || firstImage" alt="current" />
       <img :src="state.nextImage" alt="next" class="img2" />
+      <div class="caption-container">
+        <p class="photo-caption">PHOTO CAPTION</p>
+        <p class="photo-author">Name Name | Name Name</p>
+      </div>
     </div>
   </div>
   <TimelineWideSection :item="firstWide" />
@@ -144,8 +148,8 @@ onMounted(() => {
 <style lang="scss" scoped>
 .main-container {
   position: relative;
-
   display: flex;
+
   .left-content,
   .left-content-2,
   .left-content-3,
@@ -180,6 +184,32 @@ onMounted(() => {
       -ms-transition: opacity 500ms ease-in-out;
       -o-transition: opacity 500ms ease-in-out;
       transition: opacity 500ms ease-in-out;
+    }
+
+    .caption-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      color: white;
+      padding: 0 0 20px 80px;
+      background: linear-gradient(
+        180deg,
+        rgba(9, 9, 9, 0) 0%,
+        rgba(0, 0, 0, 0.5) 80%,
+        rgb(0, 0, 0) 100%
+      );
+      .photo-caption {
+        @apply font-condensed font-medium text-[14px] tracking-[0.88px] leading-[14px];
+      }
+      .photo-author {
+        @apply font-caption text-[12px] tracking-[0px] leading-[16px] mt-[10px];
+      }
     }
   }
 }
