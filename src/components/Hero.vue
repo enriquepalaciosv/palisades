@@ -4,9 +4,11 @@ import { onMounted } from "vue";
 import gsap from "gsap";
 import VueScrollTo from "vue-scrollto";
 import { useMq } from "vue3-mq";
+import arrowImage from "../assets/images/arrow.svg";
+import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
 
 defineProps({});
-import arrowImage from "../assets/images/arrow.svg";
+
 const goNext = () => {
   VueScrollTo.scrollTo("#tl-section-1", 1000, {});
 };
@@ -28,21 +30,23 @@ onMounted(() => {
         duration: 7,
       }
     );
-
-    tl.fromTo(
-      ".main-headline",
-      { opacity: 0 },
-      { opacity: 1, delay: 1, duration: 1 }
-    );
-    tl.fromTo(".secondary-headline", { opacity: 0 }, { opacity: 1 });
-    tl.fromTo(".text", { opacity: 0 }, { opacity: 1 });
-    tl.fromTo(".arrow", { opacity: 0 }, { opacity: 1 });
   }
+  tl.to(".animation", { display: "none", delay: 3 });
+
+  tl.fromTo(
+    [".main-headline", ".secondary-headline", ".text", ".arrow"],
+    { display: "none" },
+    { display: "block" }
+  );
 });
 </script>
 
 <template>
   <section id="tl-section-0" class="tl-section">
+    <div class="animation">
+      <lottie-animation path="palisades_animation.json" />
+    </div>
+
     <p class="main-headline">Milestones</p>
     <p class="secondary-headline">PALISADES TAHOE</p>
     <p class="text">

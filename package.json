@@ -12,7 +12,9 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "axios": "^0.25.0",
     "gsap": "^3.9.1",
+    "lottie-vuejs": "^0.4.0",
     "vue": "^3.2.25",
     "vue-scrollto": "^2.20.0",
     "vue3-mq": "^3.0.2"
