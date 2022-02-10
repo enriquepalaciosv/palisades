@@ -134,6 +134,8 @@ onMounted(() => {
       :current="state.currentImage"
       :next="state.nextImage"
       position="2"
+      :caption="state.caption"
+      :author="state.author"
     />
   </div>
   <TimelineWideSection v-for="(item, i) in wideBundle" :key="i" :item="item" />
@@ -145,6 +147,8 @@ onMounted(() => {
       :current="state.currentImage"
       :next="state.nextImage"
       position="3"
+      :caption="state.caption"
+      :author="state.author"
     />
   </div>
   <TimelineWideSection :item="lastWide" />
