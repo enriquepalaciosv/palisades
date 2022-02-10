@@ -3,6 +3,7 @@
 import { onMounted } from "vue";
 import gsap from "gsap";
 import VueScrollTo from "vue-scrollto";
+import { useMq } from "vue3-mq";
 
 defineProps({});
 import arrowImage from "../assets/images/arrow.svg";
@@ -11,29 +12,32 @@ const goNext = () => {
 };
 
 let tl = gsap.timeline();
-
+const mq = useMq();
+const smallScreens = ["xs", "sm", "md"];
 onMounted(() => {
-  gsap.fromTo(
-    "#tl-section-0",
-    {
-      backgroundSize: "110%",
-      backgroundPositionX: "2%",
-    },
-    {
-      backgroundSize: "100%",
-      backgroundPositionX: "0%",
-      duration: 7,
-    }
-  );
+  if (!smallScreens.find((sc) => sc === mq.current)) {
+    gsap.fromTo(
+      "#tl-section-0",
+      {
+        backgroundSize: "110%",
+        backgroundPositionX: "2%",
+      },
+      {
+        backgroundSize: "100%",
+        backgroundPositionX: "0%",
+        duration: 7,
+      }
+    );
 
-  tl.fromTo(
-    ".main-headline",
-    { opacity: 0 },
-    { opacity: 1, delay: 1, duration: 1 }
-  );
-  tl.fromTo(".secondary-headline", { opacity: 0 }, { opacity: 1 });
-  tl.fromTo(".text", { opacity: 0 }, { opacity: 1 });
-  tl.fromTo(".arrow", { opacity: 0 }, { opacity: 1 });
+    tl.fromTo(
+      ".main-headline",
+      { opacity: 0 },
+      { opacity: 1, delay: 1, duration: 1 }
+    );
+    tl.fromTo(".secondary-headline", { opacity: 0 }, { opacity: 1 });
+    tl.fromTo(".text", { opacity: 0 }, { opacity: 1 });
+    tl.fromTo(".arrow", { opacity: 0 }, { opacity: 1 });
+  }
 });
 </script>
 
@@ -53,28 +57,25 @@ onMounted(() => {
 <style lang="scss" scoped>
 .tl-section {
   @apply text-white;
-
-  background-image: url("../assets/images/hero.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media screen and (min-width: 1200px) {
-    height: 100vh;
+  height: 100vh;
+  background-image: url("../assets/images/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -600px center;
+  @media screen and (min-width: 1024px) {
+    background-position: center;
   }
 
   .main-headline {
-    @apply font-headline text-orange sm:text-[175px] lg:text-[175px];
-    letter-spacing: -1px;
-    line-height: 212px;
+    @apply font-headline text-orange text-[50px] tracking-[-0.29px] leading-[61px] lg:text-[175px] lg:tracking-[-1px] lg:leading-[212px];
   }
 
   .secondary-headline {
-    @apply font-wide font-bold text-white text-[28px];
-    letter-spacing: 3.92px;
-    line-height: 30px;
+    @apply font-wide text-center text-white mt-[30px] text-[18px] leading-[30px] tracking-[2.52px] font-medium  lg:text-[28px] lg:leading-[30px] lg:tracking-[3.92px] lg:font-bold;
   }
 
   .text {

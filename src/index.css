@@ -16,6 +16,12 @@
   }
 
   @font-face {
+    font-family: "GraphikWide";
+    font-weight: 500;
+    src: url("./assets/fonts/GraphikWide-Medium.otf") format("opentype");
+  }
+
+  @font-face {
     font-family: "TiemposHeadline";
     font-weight: 300;
     src: url("./assets/fonts/TiemposHeadline-Light.otf") format("opentype");
