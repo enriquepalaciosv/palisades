@@ -23,6 +23,9 @@ const next = navigation[props.contentIndex];
 
 <template>
   <div class="container">
+    <span class="mobile-indicator">{{
+      contentIndex === 1 ? "START" : content.year
+    }}</span>
     <h1 class="headline">{{ content.title }}</h1>
     <transition name="slide-fade">
       <div v-if="state.active === 0" class="accordion-0">
@@ -83,6 +86,11 @@ const next = navigation[props.contentIndex];
 
 .container {
   @apply flex flex-col max-w-[486px] text-blue px-[16px];
+
+  .mobile-indicator {
+    @apply text-orange font-condensed font-bold text-[12px] tracking-[0.75px] leading-[12px] mt-[50px] mb-[30px] lg:my-0 block lg:hidden;
+  }
+
   .headline {
     @apply font-headline font-light text-[28px] mb-10 leading-[32px] tracking-[0px] lg:text-[60px] lg:mb-10 lg:leading-[64px];
   }
