@@ -101,7 +101,7 @@ const next = navigation[props.contentIndex];
   }
 
   .cta {
-    @apply bg-orange text-white w-[78px] h-[35px] rounded-[25px] flex justify-center items-center drop-shadow-xl;
+    @apply bg-orange text-white min-w-[55px] max-w-[55px] h-[25px] lg:min-w-[78px] lg:max-w-[78px] lg:h-[35px] rounded-[25px] flex justify-center items-center drop-shadow-xl;
     &.active {
       @apply bg-white;
     }
