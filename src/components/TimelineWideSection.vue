@@ -6,6 +6,8 @@ import VueScrollTo from "vue-scrollto";
 // eslint-disable-next-line no-undef
 const props = defineProps({
   item: { type: Object, default: () => {} },
+  caption: { type: String, default: "" },
+  author: { type: String, default: "" },
 });
 
 const state = reactive({
@@ -34,6 +36,10 @@ const toggle = (id) => {
         <Content :content="item" :content-index="item.id" />
       </div>
       <div class="right" :class="`tl-section-${item.id}`">
+        <div class="caption-container">
+          <p class="photo-caption">{{ props.caption }}</p>
+          <p class="photo-author">{{ props.author }}</p>
+        </div>
         <button class="toggler" @click="toggle(item.id)">
           <img src="../assets/images/fullscreen.svg" alt="expand/collapse" />
         </button>
@@ -89,6 +95,31 @@ const toggle = (id) => {
         position: absolute;
         bottom: 20px;
         left: 32px;
+      }
+      .caption-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        color: white;
+        padding: 0 0 20px 100px;
+        background: linear-gradient(
+          180deg,
+          rgba(9, 9, 9, 0) 0%,
+          rgba(0, 0, 0, 0.5) 80%,
+          rgb(0, 0, 0) 100%
+        );
+        .photo-caption {
+          @apply font-condensed font-medium text-[14px] tracking-[0.88px] leading-[14px];
+        }
+        .photo-author {
+          @apply font-caption text-[12px] tracking-[0px] leading-[16px] mt-[10px];
+        }
       }
     }
   }

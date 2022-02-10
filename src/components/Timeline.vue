@@ -121,7 +121,11 @@ onMounted(() => {
       :author="state.author"
     />
   </div>
-  <TimelineWideSection :item="firstWide" />
+  <TimelineWideSection
+    :item="firstWide"
+    :caption="firstWide.caption"
+    :author="firstWide.author"
+  />
   <div class="main-container">
     <div class="left-content-2">
       <TimelineSection
@@ -138,7 +142,13 @@ onMounted(() => {
       :author="state.author"
     />
   </div>
-  <TimelineWideSection v-for="(item, i) in wideBundle" :key="i" :item="item" />
+  <TimelineWideSection
+    v-for="(item, i) in wideBundle"
+    :key="i"
+    :item="item"
+    :caption="item.caption"
+    :author="item.author"
+  />
   <div class="main-container">
     <div class="left-content-3">
       <TimelineSection :item="lastSingle" />
@@ -151,7 +161,11 @@ onMounted(() => {
       :author="state.author"
     />
   </div>
-  <TimelineWideSection :item="lastWide" />
+  <TimelineWideSection
+    :item="lastWide"
+    :caption="lastWide.caption"
+    :author="lastWide.author"
+  />
   <BackToTop />
 </template>
 
