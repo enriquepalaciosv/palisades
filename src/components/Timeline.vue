@@ -17,12 +17,14 @@ import TimelineSection from "./TimelineSection.vue";
 import TimelineWideSection from "./TimelineWideSection.vue";
 import BackToTop from "./BackToTop.vue";
 import Navigation from "./Navigation.vue";
-import firstImage from "../assets/images/section-1.png";
+import ImageSequence from "./ImageSequence.vue";
 
 const state = reactive({
   active: -1,
   currentImage: new URL(`../assets/images/section-1.png`, import.meta.url),
   nextImage: new URL(`../assets/images/section-2.png`, import.meta.url),
+  caption: "",
+  author: "",
 });
 
 const playTransition = (image) => {
@@ -66,12 +68,16 @@ onMounted(() => {
         if (shouldAnimate) {
           playTransition(`section-${section}.png`);
         }
+        state.caption = item.caption;
+        state.author = item.author;
       },
       onLeaveBack: () => {
         state.active = index - 1;
         if (shouldAnimate) {
           playTransition(`section-${section - 1}.png`);
         }
+        state.caption = navigation[index - 1].caption;
+        state.author = navigation[index - 1].author;
       },
     });
   });
@@ -108,14 +114,12 @@ onMounted(() => {
     <div class="left-content">
       <TimelineSection v-for="(item, i) in firstBundle" :key="i" :item="item" />
     </div>
-    <div class="right-content">
-      <img :src="state.currentImage || firstImage" alt="current" />
-      <img :src="state.nextImage" alt="next" class="img2" />
-      <div class="caption-container">
-        <p class="photo-caption">PHOTO CAPTION</p>
-        <p class="photo-author">Name Name | Name Name</p>
-      </div>
-    </div>
+    <ImageSequence
+      :current="state.currentImage"
+      :next="state.nextImage"
+      :caption="state.caption"
+      :author="state.author"
+    />
   </div>
   <TimelineWideSection :item="firstWide" />
   <div class="main-container">
@@ -126,20 +130,22 @@ onMounted(() => {
         :item="item"
       />
     </div>
-    <div class="right-content-2">
-      <img :src="state.currentImage" alt="current" />
-      <img :src="state.nextImage" alt="next" class="img2" />
-    </div>
+    <ImageSequence
+      :current="state.currentImage"
+      :next="state.nextImage"
+      position="2"
+    />
   </div>
   <TimelineWideSection v-for="(item, i) in wideBundle" :key="i" :item="item" />
   <div class="main-container">
     <div class="left-content-3">
       <TimelineSection :item="lastSingle" />
     </div>
-    <div class="right-content-3">
-      <img :src="state.currentImage || firstImage" alt="current" />
-      <img :src="state.nextImage" alt="next" class="img2" />
-    </div>
+    <ImageSequence
+      :current="state.currentImage"
+      :next="state.nextImage"
+      position="3"
+    />
   </div>
   <TimelineWideSection :item="lastWide" />
   <BackToTop />
@@ -152,65 +158,8 @@ onMounted(() => {
 
   .left-content,
   .left-content-2,
-  .left-content-3,
-  .right-content,
-  .right-content-2,
-  .right-content-3 {
+  .left-content-3 {
     flex: 1;
-  }
-  .right-content,
-  .right-content-2,
-  .right-content-3 {
-    height: 100vh;
-    position: relative;
-    display: none;
-    @media screen and (min-width: 1200px) {
-      display: flex;
-    }
-
-    img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-    }
-
-    .img2 {
-      opacity: 0;
-      -webkit-transition: opacity 500ms ease-in-out;
-      -moz-transition: opacity 500ms ease-in-out;
-      -ms-transition: opacity 500ms ease-in-out;
-      -o-transition: opacity 500ms ease-in-out;
-      transition: opacity 500ms ease-in-out;
-    }
-
-    .caption-container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
-      color: white;
-      padding: 0 0 20px 80px;
-      background: linear-gradient(
-        180deg,
-        rgba(9, 9, 9, 0) 0%,
-        rgba(0, 0, 0, 0.5) 80%,
-        rgb(0, 0, 0) 100%
-      );
-      .photo-caption {
-        @apply font-condensed font-medium text-[14px] tracking-[0.88px] leading-[14px];
-      }
-      .photo-author {
-        @apply font-caption text-[12px] tracking-[0px] leading-[16px] mt-[10px];
-      }
-    }
   }
 }
 </style>
