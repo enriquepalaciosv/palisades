@@ -73,7 +73,9 @@ onMounted(() => {
   @media screen and (min-width: 1024px) {
     background-position: center;
   }
-
+  .animation {
+    width: 50%;
+  }
   .main-headline {
     @apply font-headline text-orange text-[50px] tracking-[-0.29px] leading-[61px] lg:text-[175px] lg:tracking-[-1px] lg:leading-[212px];
   }
