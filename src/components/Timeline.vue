@@ -2,19 +2,10 @@
 import { onMounted, reactive } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  navigation,
-  firstBundle,
-  firstWide,
-  secondBundle,
-  wideBundle,
-  lastSingle,
-  lastWide,
-} from "../data.js";
+import { navigation } from "../data.js";
 
 import Hero from "./Hero.vue";
 import TimelineSection from "./TimelineSection.vue";
-import TimelineWideSection from "./TimelineWideSection.vue";
 import BackToTop from "./BackToTop.vue";
 import Navigation from "./Navigation.vue";
 import ImageSequence from "./ImageSequence.vue";
@@ -48,13 +39,14 @@ onMounted(() => {
 
   ScrollTrigger.create({
     trigger: ".right-content",
-    endTrigger: `#tl-section-7`,
+    endTrigger: `.back-top`,
     end: "top 100%",
     markers: false,
     pin: true,
   });
   // Sections wont' require transition because they're not pinned
-  const notAnimated = [1, 7, 11, 12, 13];
+  // const notAnimated = [1, 7, 11, 12, 13];
+  const notAnimated = [];
 
   navigation.forEach((item, index) => {
     const section = index + 1;
@@ -81,25 +73,6 @@ onMounted(() => {
       },
     });
   });
-
-  const pingScroll = () => {
-    ScrollTrigger.create({
-      trigger: ".right-content-2",
-      endTrigger: `#tl-section-10`,
-      end: "top 0%",
-      markers: false,
-      pin: true,
-    });
-  };
-
-  ScrollTrigger.create({
-    trigger: "#tl-section-8",
-    start: "top 0%",
-    onEnter: () => {
-      pingScroll();
-    },
-    markers: false,
-  });
 });
 </script>
 
@@ -112,7 +85,7 @@ onMounted(() => {
   />
   <div class="main-container">
     <div class="left-content">
-      <TimelineSection v-for="(item, i) in firstBundle" :key="i" :item="item" />
+      <TimelineSection v-for="(item, i) in navigation" :key="i" :item="item" />
     </div>
     <ImageSequence
       :current="state.currentImage"
@@ -121,51 +94,7 @@ onMounted(() => {
       :author="state.author"
     />
   </div>
-  <TimelineWideSection
-    :item="firstWide"
-    :caption="firstWide.caption"
-    :author="firstWide.author"
-  />
-  <div class="main-container">
-    <div class="left-content-2">
-      <TimelineSection
-        v-for="(item, i) in secondBundle"
-        :key="i"
-        :item="item"
-      />
-    </div>
-    <ImageSequence
-      :current="state.currentImage"
-      :next="state.nextImage"
-      position="2"
-      :caption="state.caption"
-      :author="state.author"
-    />
-  </div>
-  <TimelineWideSection
-    v-for="(item, i) in wideBundle"
-    :key="i"
-    :item="item"
-    :caption="item.caption"
-    :author="item.author"
-  />
-  <div class="main-container">
-    <div class="left-content-3">
-      <TimelineSection :item="lastSingle" />
-    </div>
-    <ImageSequence
-      :current="state.currentImage"
-      :next="state.nextImage"
-      position="3"
-      :caption="state.caption"
-      :author="state.author"
-    />
-  </div>
-  <TimelineWideSection
-    :item="lastWide"
-    :caption="lastWide.caption"
-    :author="lastWide.author"
-  />
+
   <BackToTop />
 </template>
 
