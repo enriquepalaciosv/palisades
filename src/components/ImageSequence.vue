@@ -6,16 +6,22 @@ const props = defineProps({
   position: { type: String, default: "" },
   caption: { type: String, default: "" },
   author: { type: String, default: "" },
+  expandable: { type: Boolean, default: false },
 });
 </script>
 
 <template>
   <div :class="`right-content${position ? '-' + position : ''}`">
-    <img :src="props.current" alt="current" />
-    <img :src="props.next" alt="next" class="img2" />
-    <div class="caption-container">
-      <p class="photo-caption">{{ props.caption }}</p>
-      <p class="photo-author">{{ props.author }}</p>
+    <img :src="props.current" alt="current" class="animated-image" />
+    <img :src="props.next" alt="next" class="img2 animated-image" />
+    <div class="caption-container" :class="{ expandable: props.expandable }">
+      <button v-if="props.expandable" class="toggler">
+        <img src="../assets/images/fullscreen.svg" alt="expand/collapse" />
+      </button>
+      <div class="text-container">
+        <p class="photo-caption">{{ props.caption }}</p>
+        <p class="photo-author">{{ props.author }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -36,7 +42,7 @@ const props = defineProps({
     display: flex;
   }
 
-  img {
+  .animated-image {
     position: absolute;
     top: 0;
     right: 0;
@@ -62,9 +68,7 @@ const props = defineProps({
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+  align-items: flex-end;
   color: white;
   padding: 0 0 20px 80px;
   background: linear-gradient(
@@ -73,11 +77,24 @@ const props = defineProps({
     rgba(0, 0, 0, 0.5) 80%,
     rgb(0, 0, 0) 100%
   );
-  .photo-caption {
-    @apply font-condensed font-medium text-[14px] tracking-[0.88px] leading-[14px];
+
+  &.expandable {
+    padding: 0 0 20px 20px;
   }
-  .photo-author {
-    @apply font-caption text-[12px] tracking-[0px] leading-[16px] mt-[10px];
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: 4px;
+
+    .photo-caption {
+      @apply font-condensed font-medium text-[14px] tracking-[0.88px] leading-[14px];
+    }
+    .photo-author {
+      @apply font-caption text-[12px] tracking-[0px] leading-[16px] mt-[10px];
+    }
   }
 }
 </style>

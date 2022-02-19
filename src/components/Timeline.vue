@@ -16,6 +16,7 @@ const state = reactive({
   nextImage: new URL(`../assets/images/section-2.png`, import.meta.url),
   caption: "",
   author: "",
+  expandable: false,
 });
 
 const playTransition = (image) => {
@@ -62,6 +63,7 @@ onMounted(() => {
         }
         state.caption = item.caption;
         state.author = item.author;
+        state.expandable = item.expandable;
       },
       onLeaveBack: () => {
         state.active = index - 1;
@@ -70,6 +72,7 @@ onMounted(() => {
         }
         state.caption = navigation[index - 1].caption;
         state.author = navigation[index - 1].author;
+        state.expandable = navigation[index - 1].expandable;
       },
     });
   });
@@ -92,6 +95,7 @@ onMounted(() => {
       :next="state.nextImage"
       :caption="state.caption"
       :author="state.author"
+      :expandable="state.expandable"
     />
   </div>
 
