@@ -95,7 +95,7 @@ const reset = () => {
 }
 
 .container {
-  @apply flex flex-col max-w-[486px] text-blue px-[16px];
+  @apply flex flex-col max-w-[486px] text-blue px-[16px] lg:py-[40px];
 
   .mobile-indicator {
     @apply text-orange font-condensed font-bold text-[12px] tracking-[0.75px] leading-[12px] mt-[50px] mb-[30px] lg:my-0 block lg:hidden;
