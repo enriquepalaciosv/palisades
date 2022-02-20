@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, reactive } from "vue";
+import { onMounted, reactive, getCurrentInstance } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { navigation } from "../data.js";
@@ -81,6 +81,13 @@ onMounted(() => {
         state.expandable = navigation[index - 1].expandable;
       },
     });
+  });
+
+  const internalInstance = getCurrentInstance();
+  const emitter = internalInstance.appContext.config.globalProperties.emitter;
+
+  emitter.on("palisades:change-image", (imageName) => {
+    playTransition(imageName);
   });
 });
 </script>

@@ -1,9 +1,13 @@
 <script setup>
 /* eslint-disable no-undef */
-import { reactive } from "vue";
+import { reactive, getCurrentInstance } from "vue";
 import Divider from "./Divider.vue";
 import VueScrollTo from "vue-scrollto";
 import { navigation } from "../data";
+
+const internalInstance = getCurrentInstance();
+const emitter = internalInstance.appContext.config.globalProperties.emitter;
+
 // eslint-disable-next-line no-undef
 const props = defineProps({
   content: { type: Object, default: () => {} },
@@ -22,12 +26,12 @@ const next = navigation[props.contentIndex];
 
 const changeActive = (item, index) => {
   state.active = index + 1;
-  // $emit("imageSwap", item.itemImage);
-  // TODO: take a look at mitt
+  emitter.emit("palisades:change-image", item.itemImage);
 };
 
 const reset = () => {
   state.active = 0;
+  emitter.emit("palisades:change-image", `section-${props.content.id}.png`);
 };
 </script>
 
