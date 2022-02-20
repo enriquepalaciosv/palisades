@@ -34,7 +34,7 @@ onMounted(() => {
   tl.to(".animation", { display: "none", delay: 3 });
 
   tl.fromTo(
-    [".main-headline", ".secondary-headline", ".text", ".arrow"],
+    [".main-headline", ".secondary-headline", ".hero-text", ".arrow"],
     { display: "none" },
     { display: "block" }
   );
@@ -49,7 +49,7 @@ onMounted(() => {
 
     <p class="main-headline">Milestones</p>
     <p class="secondary-headline">PALISADES TAHOE</p>
-    <p class="text">
+    <p class="hero-text">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam.
@@ -84,7 +84,7 @@ onMounted(() => {
     @apply font-wide text-center text-white mt-[30px] text-[18px] leading-[30px] tracking-[2.52px] font-medium  lg:text-[28px] lg:leading-[30px] lg:tracking-[3.92px] lg:font-bold;
   }
 
-  .text {
+  .hero-text {
     @apply font-text text-white text-[18px];
     letter-spacing: 0.56px;
     line-height: 28px;

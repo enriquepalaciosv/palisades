@@ -10,6 +10,9 @@ import BackToTop from "./BackToTop.vue";
 import Navigation from "./Navigation.vue";
 import ImageSequence from "./ImageSequence.vue";
 
+const internalInstance = getCurrentInstance();
+const emitter = internalInstance.appContext.config.globalProperties.emitter;
+
 const state = reactive({
   active: -1,
   currentImage: new URL(`../assets/images/section-1.png`, import.meta.url),
@@ -35,9 +38,24 @@ const playTransition = (image) => {
   });
 };
 
+const resetSubItems = () => {
+  setTimeout(() => {
+    emitter.emit("palisades:reset-sub-items");
+  }, 1000);
+};
+
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);
 
+  // Overlap hero animation
+  ScrollTrigger.create({
+    trigger: "#tl-section-0",
+    start: "top top",
+    pin: true,
+    pinSpacing: false,
+  });
+
+  // Unpin pictures when hitting footer
   ScrollTrigger.create({
     trigger: ".right-content",
     endTrigger: `.back-top`,
@@ -46,13 +64,7 @@ onMounted(() => {
     pin: true,
   });
 
-  ScrollTrigger.create({
-    trigger: "#tl-section-0",
-    start: "top top",
-    pin: true,
-    pinSpacing: false,
-  });
-  // Sections wont' require transition because they're not pinned
+  // Sections won't require transition
   const notAnimated = [1];
 
   navigation.forEach((item, index) => {
@@ -66,6 +78,7 @@ onMounted(() => {
         state.active = index;
         if (shouldAnimate) {
           playTransition(`section-${section}.png`);
+          resetSubItems();
         }
         state.caption = item.caption;
         state.author = item.author;
@@ -75,6 +88,7 @@ onMounted(() => {
         state.active = index - 1;
         if (shouldAnimate) {
           playTransition(`section-${section - 1}.png`);
+          resetSubItems();
         }
         state.caption = navigation[index - 1].caption;
         state.author = navigation[index - 1].author;
@@ -82,9 +96,6 @@ onMounted(() => {
       },
     });
   });
-
-  const internalInstance = getCurrentInstance();
-  const emitter = internalInstance.appContext.config.globalProperties.emitter;
 
   emitter.on("palisades:change-image", (imageName) => {
     playTransition(imageName);

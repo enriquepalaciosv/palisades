@@ -1,6 +1,6 @@
 <script setup>
 /* eslint-disable no-undef */
-import { reactive, getCurrentInstance } from "vue";
+import { reactive, getCurrentInstance, onMounted } from "vue";
 import Divider from "./Divider.vue";
 import VueScrollTo from "vue-scrollto";
 import { navigation } from "../data";
@@ -14,13 +14,13 @@ const props = defineProps({
   contentIndex: { type: Number, default: 0 },
 });
 
-const goTo = (index) => {
-  VueScrollTo.scrollTo(`#tl-section-${index}`, 1000, {});
-};
-
 const state = reactive({
   active: 0,
 });
+
+const goTo = (index) => {
+  VueScrollTo.scrollTo(`#tl-section-${index}`, 1000, {});
+};
 
 const next = navigation[props.contentIndex];
 
@@ -33,10 +33,16 @@ const reset = () => {
   state.active = 0;
   emitter.emit("palisades:change-image", `section-${props.content.id}.png`);
 };
+
+onMounted(() => {
+  emitter.on("palisades:reset-sub-items", () => {
+    state.active = 0;
+  });
+});
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" :class="`container-${props.contentIndex}`">
     <span class="mobile-indicator">{{
       contentIndex === 1 ? "START" : content.year
     }}</span>
