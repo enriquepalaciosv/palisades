@@ -45,9 +45,15 @@ onMounted(() => {
     markers: false,
     pin: true,
   });
+
+  ScrollTrigger.create({
+    trigger: "#tl-section-0",
+    start: "top top",
+    pin: true,
+    pinSpacing: false,
+  });
   // Sections wont' require transition because they're not pinned
-  // const notAnimated = [1, 7, 11, 12, 13];
-  const notAnimated = [];
+  const notAnimated = [1];
 
   navigation.forEach((item, index) => {
     const section = index + 1;
