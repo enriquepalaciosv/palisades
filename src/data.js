@@ -35,11 +35,13 @@ const firstBundle = [
     author: "Name Name | Name Name",
     items: [
       {
+        itemImage: "section-3-2.png",
         itemTitle: "1949. Squaw Valley Opens",
         itemDescription:
           "On November 24, 1949, Squaw Valley opens with one chairlift, Squaw One, then the longest double chairlift in the world, and two rope tows. Over the decades that follow, Squaw Valley expands its terrain to include six mountain peaks, spanning 3,600 skiable acres.The opening is a triumph for Cushing, but a painful loss to Poulsen, who was forced out of the company he helped start before the ski area ever opened. Poulsen retains operations of a small ski area that later becomes the Red Dog and Squaw Creek terrain and maintains ownership of much of the land in the valley, including the spectacular Olympic Meadow that he later helps to preserve from destruction.",
       },
       {
+        itemImage: "section-3-3.png",
         itemTitle: "1955. John Reily Eyes Alpine Meadows",
         itemDescription:
           "A Los Angeles businessman named John Reily visits the Tahoe area and looks southwest from the top of KT-22 to spot a pristine valley that he envisions as a neighboring ski area. With word of the Olympics coming to Squaw Valley, Reily envisions a promising future for the entire North Lake Tahoe region. On a day hike through the area, Sally Hudson, mother of future Olympian Bill Hudson, suggests the area should be named “Alpine Meadows.”",
@@ -62,20 +64,24 @@ const firstBundle = [
     author: "Name Name | Name Name",
     items: [
       {
+        itemImage: "section-5-2.png",
         itemTitle: "1961. Alpine Meadows Opens",
         itemDescription:
           "On December 28, 1961, skiers ride to the top of Ward Peak at the newly-opened Alpine Meadows, on a lift called Chair One, a zone now accessed by the six-person Summit Express. By 1965, Alpine Meadows quadruples its terrain, adding six lifts and opening access to Scott Peak and the backside of Ward Peak, encompassing 2,400 skiable acres.",
       },
       {
+        itemImage: "section-5-3.png",
         itemTitle: "1968. Aerial Tram Installed",
         itemDescription:
           "A cable car is shipped from Switzerland and constructed and installed at Squaw Valley. It whisks skiers 1.5 miles up a steep rock face to a mountaintop lodge called High Camp. Engineers looked at trams across Europe to consider the feasibility of designing one here. At the time, it is the largest aerial tramway in the world.",
       },
       {
+        itemImage: "section-5-4.png",
         itemTitle: "Late 1960s. Creating Champions",
         itemDescription: "",
       },
       {
+        itemImage: "section-5-5.png",
         itemTitle: "1970. Community of Writers at Squaw Valley",
         itemDescription: "",
       },
@@ -100,14 +106,17 @@ const firstWide = {
   expandable: true,
   items: [
     {
+      itemImage: "section-7-2.png",
       itemTitle: "1975. The Controversy of Silverado Lift",
       itemDescription: "Lorem Ipsum",
     },
     {
+      itemImage: "section-7-3.png",
       itemTitle: "1979. The First Halfpipe",
       itemDescription: "Lorem Ipsum",
     },
     {
+      itemImage: "section-7-4.png",
       itemTitle: "1982. Avalanche at Alpine Meadows",
       itemDescription: "Lorem Ipsum",
     },
@@ -125,6 +134,7 @@ const secondBundle = [
     author: "Name Name | Name Name",
     items: [
       {
+        itemImage: "section-8-2.png",
         itemTitle: "1990. Cushing Crossing Pond Skimming",
         itemDescription: "Lorem Ipsum",
       },
@@ -140,6 +150,7 @@ const secondBundle = [
     author: "Name Name | Name Name",
     items: [
       {
+        itemImage: "section-9-2.png",
         itemTitle: "1998. Opening of the Gold Coast Funitel ",
         itemDescription: "Lorem Ipsum",
       },
@@ -152,15 +163,18 @@ const secondBundle = [
     author: "Name Name | Name Name",
     items: [
       {
+        itemImage: "section-10-2.png",
         itemTitle: "1998. Jonny Moseley Wins Olympic Gold",
         itemDescription:
           "Concert promoter Bill Graham teams up with Squaw Valley to present the Squaw Valley Summer Music Festival. On the lineup: the Jerry Garcia Band, Béla Fleck and the Flecktones, David Grisman, and others. It's the first of many major music festivals and acts to take the stage at the base of the legendary ski resort and a predecessor to events like the modern-day WinterWondergrass Festival.",
       },
       {
+        itemImage: "section-10-3.png",
         itemTitle: "1999. C.R. Johnson Lands a 1440",
         itemDescription: "Lorem Ipsum",
       },
       {
+        itemImage: "section-10-4.png",
         itemTitle: "2001. Shane McConkey Conquers the World",
         itemDescription: "Lorem Ipsum",
       },
@@ -177,18 +191,22 @@ const wideBundle = [
     expandable: true,
     items: [
       {
+        itemImage: "section-11-2.png",
         itemTitle: "2002. The Village at Squaw Valley",
         itemDescription: "Lorem Ipsum",
       },
       {
+        itemImage: "section-11-3.png",
         itemTitle: "2003. Squallywood The Book Published",
         itemDescription: "Lorem Ipsum",
       },
       {
+        itemImage: "section-11-4.png",
         itemTitle: "2006. Julia Mancuso Wins First Olympic Gold",
         itemDescription: "Lorem Ipsum",
       },
       {
+        itemImage: "section-11-5.png",
         itemTitle: "2006. Mike Wilson's Double Backflips",
         itemDescription: "Lorem Ipsum",
       },
@@ -212,10 +230,12 @@ const wideBundle = [
     expandable: true,
     items: [
       {
+        itemImage: "section-13-2.png",
         itemTitle: "2016. Backcountry Tours Out the Gates",
         itemDescription: "Lorem Ipsum",
       },
       {
+        itemImage: "section-13-3.png",
         itemTitle: "2016. Spring Skiing Capital",
         itemDescription: "Lorem Ipsum",
       },
@@ -240,18 +260,22 @@ const lastWide = {
   expandable: true,
   items: [
     {
+      itemImage: "section-15-2.png",
       itemTitle: "2018. Introducing the Ikon Pass",
       itemDescription: "Lorem Ipsum",
     },
     {
+      itemImage: "section-15-3.png",
       itemTitle: "2019. Treeline Cirque Provides Access to the Backside",
       itemDescription: "Lorem Ipsum",
     },
     {
+      itemImage: "section-15-4.png",
       itemTitle: "2021. Squaw Valley Renamed TK",
       itemDescription: "Lorem Ipsum",
     },
     {
+      itemImage: "section-15-5.png",
       itemTitle: "2021. Base-to-Base Gondola Installed",
       itemDescription: "Lorem Ipsum",
     },
