@@ -80,6 +80,18 @@ onMounted(() => {
           class="item-description pb-8 accordion-1"
         >
           {{ item.itemDescription }}
+          <div
+            v-if="item.itemTitle === '2001. Shane McConkey Conquers the World'"
+            style="margin-top: 14px"
+          >
+            To learn more about Shane & the freeski movement check out our
+            <a
+              target="_blank"
+              class="text-orange"
+              href="https://blog.palisadestahoe.com/legends-of-tahoe/land-of-freeski/"
+              >"Land of Freeski" story here.</a
+            >
+          </div>
         </div>
       </transition>
       <Divider />
