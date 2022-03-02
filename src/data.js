@@ -105,19 +105,19 @@ const firstWide = {
   expandable: false,
   items: [
     {
-      itemImage: "section-6.png",
+      itemImage: "section-7.png",
       itemTitle: "1975. The Controversy of Silverado Lift",
       itemDescription:
         "A new master plan for Squaw Valley includes the construction of two new chairlifts above Shirley Canyon: Solitude and Silverado. Over the ensuing years, conflict arises over the building of Silverado in an area many consider to be pristine wilderness, but Cushing presses on. In 1989, Cushing orders the project to move forward, and a large stand of old-growth forest is cut down over one weekend without regulatory approval. The ensuing lawsuits and controversy both burnish and tarnish Cushing’s reputation, incurring penalties and court-imposed limits that result in operational compromises to this day. Silverado did become a legendary lift, with steep cliffs and chutes accessible only via designated gates and only during its limited operating season.",
     },
     {
-      itemImage: "section-6.png",
+      itemImage: "section-7.png",
       itemTitle: "1982. Avalanche at Alpine Meadows",
       itemDescription:
         "On March 31, 1982, a late-season storm dumps nearly 90 inches of snow in four days. Avalanche conditions are so extreme that Alpine Meadows mountain manager Bernie Kingery closes the mountain to everyone, including employees. When a series of massive avalanches break along Alpine’s northeast ridge, it destroys the Summit Terminal building, where Kingery and others are holding up, as well as portions of the parking lot. Seven people, including Kingery, are tragically killed. One employee, Anna Conrad, survives after spending five days buried in a locker room. To date, Squaw Valley Alpine Meadows has one of the most extensive avalanche mitigation regimens of any ski resort in the world, but the threat of avalanche remains ever-present.",
     },
     {
-      itemImage: "section-7-5.png",
+      itemImage: "section-7.png",
       itemTitle: "1986-1996.  Ski Resorts Open Doors to Snowboarders",
       itemDescription:
         "On March 31, 1982, a late-season storm dumps nearly 90 inches of snow in four days. Avalanche conditions are so extreme that Alpine Meadows mountain manager Bernie Kingery closes the mountain to everyone, including employees. When a series of massive avalanches break along Alpine’s northeast ridge, it destroys the Summit Terminal building, where Kingery and others are holding up, as well as portions of the parking lot. Seven people, including Kingery, are tragically killed. One employee, Anna Conrad, survives after spending five days buried in a locker room. To date, Squaw Valley Alpine Meadows has one of the most extensive avalanche mitigation regimens of any ski resort in the world, but the threat of avalanche remains ever-present.",

@@ -39,7 +39,7 @@ const toggle = () => {
       </div>
     </div>
   </div>
-  <div class="popup" @keyup="console.log('ok')">
+  <div class="popup">
     <img :src="props.current" alt="full width picture" class="fullwidthimg" />
     <div class="caption-container">
       <button class="toggler" @click="toggle()">
@@ -110,7 +110,7 @@ const toggle = () => {
   display: flex;
   align-items: flex-end;
   color: white;
-  padding: 0 0 20px 80px;
+  padding: 0 0 20px 20px;
   background: linear-gradient(
     180deg,
     rgba(9, 9, 9, 0) 0%,

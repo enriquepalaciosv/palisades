@@ -15,7 +15,7 @@ const props = defineProps({
 });
 
 const state = reactive({
-  active: 0,
+  active: props.content.id === 10 ? 3 : 0,
 });
 
 const goTo = (index) => {
@@ -35,9 +35,11 @@ const reset = () => {
 };
 
 onMounted(() => {
-  emitter.on("palisades:reset-sub-items", () => {
-    state.active = 0;
-  });
+  if (props.content.id !== 10) {
+    emitter.on("palisades:reset-sub-items", () => {
+      state.active = 0;
+    });
+  }
 });
 </script>
 
