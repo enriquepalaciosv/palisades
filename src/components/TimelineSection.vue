@@ -14,6 +14,6 @@ defineProps({
 
 <style lang="scss" scoped>
 .tl-section {
-  @apply flex justify-center lg:items-center h-auto lg:h-[100vh] bg-white;
+  @apply flex justify-center lg:items-center h-auto lg:min-h-[100vh] bg-white;
 }
 </style>

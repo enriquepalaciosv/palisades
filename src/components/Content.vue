@@ -1,5 +1,6 @@
 <script setup>
 /* eslint-disable no-undef */
+/* eslint-disable vue/no-v-html */
 import { reactive, getCurrentInstance, onMounted } from "vue";
 import Divider from "./Divider.vue";
 import VueScrollTo from "vue-scrollto";
@@ -37,7 +38,7 @@ const reset = () => {
 onMounted(() => {
   if (props.content.id !== 10) {
     emitter.on("palisades:reset-sub-items", () => {
-      state.active = 0;
+      // state.active = 0;
     });
   }
 });
@@ -52,7 +53,12 @@ onMounted(() => {
     <transition name="slide-fade">
       <div v-if="state.active === 0" class="accordion-0">
         <Divider v-if="content.description" />
-        <p class="text">
+        <p
+          v-if="content.description && content.description.includes('<')"
+          class="text"
+          v-html="content.description"
+        />
+        <p v-else class="text">
           {{ content.description }}
         </p>
         <Divider v-if="content.description" />
