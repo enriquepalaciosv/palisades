@@ -92,16 +92,17 @@ const firstBundle = [
     title: "1975. Palisades Put On the Map",
     description:
       "Tahoe filmmaker Craig Beck debuts his film, Daydreams, shot on location at Squaw Valley. The movie is the first to capture high-stakes skiing off Squaw's Palisades, the precipitous cliff band adjacent to the start of the 1960 men's Olympic Downhill. In the film, Craig's younger brother, Greg, airs over 100 feet to a stomped landing (on what is now known as Beck's Rock) and Dave Burnham pulls off an 80-foot flip, giving the Palisades its modern-day mantra: “When it doubt, air it out.” By the early 80s, Warren Miller comes to Squaw Valley to film the likes of Scot Schmidt, Tom Day, Jim Zellers, and others, cementing Squaw's reputation as an extreme skier's stomping grounds.",
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption:
+      "Kevin Andrews drops into the Chimney Sweep on Palisades ultimate proving grounds.",
+    author: "Larry Prosor",
   },
 ];
 
 const firstWide = {
   id: 7,
   year: 1975,
-  caption: "PHOTO CAPTION",
-  author: "Name Name | Name Name",
+  caption: "Early days of Snowboarding",
+  author: "Larry Prosor",
   expandable: false,
   items: [
     {
@@ -132,8 +133,9 @@ const secondBundle = [
     title: "1988. The Dawn of Film Skiing",
     description:
       "The rock-punk ski movie Blizzard of Aahhh's, by Greg Stump, celebrates the new era of extreme skiing, starring then virtually unknown skiers Glen Plake, Scot Schmit, and Mike Hattrup flying over cliffs at Squaw Valley in brightly-colored one-pieces. The film is just one of many classic ski and snowboard movies filmed on these hallowed slopes, including Warren Miller's Steep and Deep (1985), Hollywood's Hot Dog...The Movie (1984), Standard Films' first snowboard movie Totally Board (1991), Scott Gaffney's first film Walls of Freedom (1995), and countless Matchstick Productions, Poor Boyz, and Teton Gravity Research movies of the '90s and 2000s that gave the mountain its nickname “Squallywood.”",
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption:
+      "Kevin Andrews airing it out with Palisades looming in the background",
+    author: "Larry Prosor",
     items: [
       {
         itemImage: "section-8-2.png",
@@ -149,8 +151,8 @@ const secondBundle = [
     title: "1991. Jerry Garcia Band Plays",
     description:
       "Concert promoter Bill Graham teams up with Squaw Valley to present the Squaw Valley Summer Music Festival. On the lineup: the Jerry Garcia Band, Béla Fleck and the Flecktones, David Grisman, and others. It's the first of many major music festivals and acts to take the stage at the base of the legendary ski resort and a predecessor to events like the modern-day WinterWondergrass Festival.",
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption: "Jerry Garcia Band concert at High Camp",
+    author: "Tom Day",
     items: [
       {
         itemImage: "section-9-2.png",
@@ -163,8 +165,9 @@ const secondBundle = [
   {
     id: 10,
     year: 1998,
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption:
+      "Shane McConkey drops into center line on the Palisades infamous chimney zone",
+    author: "Scott Gaffney",
     items: [
       {
         itemImage: "section-10.png",
@@ -192,8 +195,9 @@ const wideBundle = [
   {
     id: 11,
     year: 2002,
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption:
+      "Gunner Newquist sending huge off Bowers Tower in 2005. This photo made the cover of Squallywood's 2nd edition.",
+    author: "Jason Abraham",
     expandable: false,
     items: [
       {
@@ -228,15 +232,15 @@ const wideBundle = [
     title: "2011. Squaw Valley and Alpine Meadows Unite",
     description:
       "After many years of separate ownership, Squaw Valley and Alpine Meadows join forces in November 2011. Together, the two ski areas offer skiers and riders access to over 6,000 acres on a single lift ticket and season pass and reignite John Reilly's dreams of a lift connection between the two ski areas.",
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption: "Aerial view of Palisades Tahoe soon to be connected by a gondola",
+    author: "Matt Palmer",
     expandable: true,
   },
   {
     id: 13,
     year: 2016,
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption: "Errol Kerr slashing a spring turn above Lake Tahoe",
+    author: "Court Leve",
     expandable: true,
     items: [
       {
@@ -261,14 +265,15 @@ const lastSingle = {
   title: "2017. Squaw Valley Hosts World Cup",
   description:
     "Squaw Valley hosts a women's World Cup race, the first time the mountain staged a World Cup in 19 years. The U.S. Ski and Snowboard Association also designates Squaw Valley Alpine Meadows an official training site. Squaw Valley Alpine Meadows has sent 64 athletes (and counting) to the U.S. Ski and Snowboard Team and more than two dozen athletes to the Olympics, including legendary names like Eric, Sandra, and Wayne Poulsen, Jimmie Heuga, Bill Hudson, Tamara McKinney, Nate Holland, Daron Rahlves, Shannon Bahrke, Jonny Moseley, Julia Mancuso, Marco Sullivan, Travis Ganong, and more.",
-  caption: "PHOTO CAPTION",
-  author: "Name Name | Name Name",
+  caption: "Mikaela Shiffrin, 2017 Womens World Cup",
+  author: "Jon Margolis",
 };
 const lastWide = {
   id: 15,
   year: 2018,
-  caption: "PHOTO CAPTION",
-  author: "Name Name | Name Name",
+  caption:
+    "Scott Gaffney wins the Fingers race off KT22 and jumps off Main Air.",
+  author: "Kate Abraham",
   expandable: false,
   items: [
     {
