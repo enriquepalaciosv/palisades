@@ -5,8 +5,8 @@ const firstBundle = [
     title: "9,000 Years Ago. The Area’s First Inhabitants",
     description:
       "An indigenous Native American people, the Washoe Tribe inhabited lands around Lake Tahoe dating back thousands of years. They hunted, gathered, and traveled on hand-hewn snowshoes in the winter months. Their tribe name comes from the Washoe word, Wašiw, meaning “people from here.” The Washoe first called Lake Tahoe “Da ow ga,” the Washoe word for “lake,” which is thought to be the source for the name Lake Tahoe. Da ow aga is central to the tribe’s identity and is still considered the tribe’s most sacred place.",
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption: "",
+    author: "",
     items: [
       {
         itemTitle: "1844. Western Migration",
@@ -22,8 +22,8 @@ const firstBundle = [
     title: "1939. The Poulsens and the Cushings",
     description:
       "Originally from the Bay Area, Wayne Poulsen spends his youth ski jumping and touring in the Sierra Nevada, working with Dr. Frank Church as a snow hydrographer, jumping in early ski competitions, and eventually helping to start the University of Nevada, Reno’s ski team. After helping to start the ski area now known as Sky Tavern, Poulsen ventured further into the Sierra and fell in love with the stunning valley known as Squaw Valley. In 1939, Poulsen secures an option to buy land in the valley from the Southern Pacific Railroad, and by the mid-1940s, together with his wife, Sandy, the Poulsens build a home to raise their family and pursue their dream of developing Squaw Valley. Poulsen meets Alexander Cushing, an East Coast businessman, while on a ski trip at Alta in 1945, and the two formed a partnership. <br/><br/> The partnership dissolved prior to the resort opening, with Cushing remaining with the company and serving as the Chairman for the next five decades. Cushing continued to build and expand Squaw Valley, and his ambitious vision, led by an imagination undeterred by what was possible at the time, created the identity the resort carries to this day. Cushing built lifts to every peak, introducing skiers to some of the steepest terrain in the country. The challenge of Squaw Valley’s steep chutes and granite cliffs attracted the pioneering personalities who would become the founders of the freeskiing movement, as well as Warren Miller, the man who would capture it all on film.",
-    caption: "PHOTO CAPTION 2",
-    author: "Name Name | Name Name 2",
+    caption: "",
+    author: "",
   },
   {
     id: 3,
@@ -31,8 +31,8 @@ const firstBundle = [
     title: "1943. The Naming of KT-22",
     description:
       "Sandy and Wayne Poulsen strap skins to their skis to climb and ski the snow-covered peaks surrounding their home. One of those peaks is so steep, Sandy does 22 kick-turns to make her way down the precipitous north-facing slope. They name the peak KT-22, which will eventually become the site of one of the most legendary chairlifts in North America.",
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption: "",
+    author: "",
     items: [
       {
         itemImage: "section-3-2.png",
@@ -54,14 +54,14 @@ const firstBundle = [
     title: "1960. Winter Olympic Games",
     description:
       "Cushing pulls off the triumph of a lifetime by convincing a very skeptical International Olympic Committee to award Squaw Valley the first Winter Olympic Games to be held in the western United States. The games are the first to be nationally televised, giving many people their first look at the exotic sport of skiing, and kicks off a wave of national interest in the sport. Inside the Olympic Village Lodge, athletes from every country dine together—the first and last time in Olympic history. Walt Disney leads the opening ceremonies, the sports of biathlon and women's speed skating are introduced, and metal skis are used for the first time in ski racing. Computers are utilized for the first time to compute the scores, and the U.S. men's ice hockey team beats the Russians in a major upset that's been called the first miracle on ice.",
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption: "",
+    author: "",
   },
   {
     id: 5,
     year: 1961,
-    caption: "PHOTO CAPTION",
-    author: "Name Name | Name Name",
+    caption: "",
+    author: "",
     title: "1961. Alpine Meadows Opens",
     description:
       "On December 28, 1961, skiers ride to the top of Ward Peak at the newly-opened Alpine Meadows, on a lift called Chair One, a zone now accessed by the six-person Summit Express. By 1965, Alpine Meadows quadruples its terrain, adding six lifts and opening access to Scott Peak and the backside of Ward Peak, encompassing 2,400 skiable acres.",

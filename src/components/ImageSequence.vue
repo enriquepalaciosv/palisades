@@ -34,8 +34,10 @@ const toggle = () => {
         <img src="../assets/images/fullscreen.svg" alt="expand/collapse" />
       </button>
       <div class="text-container">
-        <p class="photo-caption">{{ props.caption }}</p>
-        <p class="photo-author">{{ props.author }}</p>
+        <p v-if="props.caption" class="photo-caption">
+          {{ props.caption.toUpperCase() }}
+        </p>
+        <p v-if="props.author" class="photo-author">{{ props.author }}</p>
       </div>
     </div>
   </div>
@@ -46,8 +48,10 @@ const toggle = () => {
         <img src="../assets/images/fullscreen.svg" alt="expand/collapse" />
       </button>
       <div class="text-container">
-        <p class="photo-caption">{{ props.caption }}</p>
-        <p class="photo-author">{{ props.author }}</p>
+        <p v-if="props.caption" class="photo-caption">
+          {{ props.caption.toUpperCase() }}
+        </p>
+        <p v-if="props.author" class="photo-author">{{ props.author }}</p>
       </div>
     </div>
   </div>
