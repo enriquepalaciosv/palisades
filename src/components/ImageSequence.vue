@@ -29,7 +29,10 @@ const toggle = () => {
   <div :class="`right-content${position ? '-' + position : ''}`">
     <img :src="props.current" alt="current" class="animated-image" />
     <img :src="props.next" alt="next" class="img2 animated-image" />
-    <div class="caption-container" :class="{ expandable: props.expandable }">
+    <div
+      class="caption-container"
+      :class="{ expandable: props.expandable, hascaption: props.caption }"
+    >
       <button v-if="props.expandable" class="toggler" @click="toggle()">
         <img
           src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
@@ -46,7 +49,7 @@ const toggle = () => {
   </div>
   <div class="popup">
     <img :src="props.current" alt="full width picture" class="fullwidthimg" />
-    <div class="caption-container">
+    <div class="caption-container" :class="{ hascaption: props.caption }">
       <button class="toggler" @click="toggle()">
         <img
           src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
@@ -121,12 +124,14 @@ const toggle = () => {
   align-items: flex-end;
   color: white;
   padding: 0 0 20px 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(9, 9, 9, 0) 0%,
-    rgba(0, 0, 0, 0.5) 80%,
-    rgb(0, 0, 0) 100%
-  );
+  &.hascaption {
+    background: linear-gradient(
+      180deg,
+      rgba(9, 9, 9, 0) 0%,
+      rgba(0, 0, 0, 0.5) 80%,
+      rgb(0, 0, 0) 100%
+    );
+  }
 
   &.expandable {
     padding: 0 0 20px 20px;
