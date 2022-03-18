@@ -15,8 +15,8 @@ const emitter = internalInstance.appContext.config.globalProperties.emitter;
 
 const state = reactive({
   active: -1,
-  currentImage: new URL(`../assets/images/section-1.png`, import.meta.url),
-  nextImage: new URL(`../assets/images/section-2.png`, import.meta.url),
+  currentImage: "https://svamm-icros.vercel.app/assets/section-1.433a412a.png",
+  nextImage: "https://svamm-icros.vercel.app/assets/section-2.67a352e4.png",
   caption: "",
   author: "",
   expandable: false,
@@ -24,7 +24,8 @@ const state = reactive({
 
 const playTransition = (image) => {
   // Reveal next image
-  const next = new URL(`../assets/images/${image}`, import.meta.url);
+  // const next = new URL(`../assets/images/${image}`, import.meta.url);
+  const next = image;
   state.nextImage = next;
   gsap.to(".img2", {
     opacity: 1,
@@ -69,6 +70,8 @@ onMounted(() => {
 
   navigation.forEach((item, index) => {
     const section = index + 1;
+    const nextItem = navigation[index];
+    const previousItem = navigation[index - 1];
     const shouldAnimate = !notAnimated.find((na) => section === na);
     ScrollTrigger.create({
       trigger: `#tl-section-${section}`,
@@ -77,7 +80,7 @@ onMounted(() => {
       onEnter: () => {
         state.active = index;
         if (shouldAnimate) {
-          playTransition(`section-${section}.png`);
+          playTransition(nextItem.defaultImage);
           resetSubItems();
         }
         state.caption = item.caption;
@@ -87,12 +90,14 @@ onMounted(() => {
       onLeaveBack: () => {
         state.active = index - 1;
         if (shouldAnimate) {
-          playTransition(`section-${section - 1}.png`);
+          playTransition(previousItem.defaultImage);
           resetSubItems();
         }
-        state.caption = navigation[index - 1].caption;
-        state.author = navigation[index - 1].author;
-        state.expandable = navigation[index - 1].expandable;
+        if (navigation[index - 1]) {
+          state.caption = navigation[index - 1].caption;
+          state.author = navigation[index - 1].author;
+          state.expandable = navigation[index - 1].expandable;
+        }
       },
     });
   });

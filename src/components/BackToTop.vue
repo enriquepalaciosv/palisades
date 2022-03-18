@@ -10,7 +10,7 @@ defineProps({
     <a v-scroll-to="'#tl-section-0'" href="#">Back To Top</a>
     <img
       v-scroll-to="'#tl-section-0'"
-      src="../assets/images/back.svg"
+      src="https://svamm-icros.vercel.app/assets/images/back.svg"
       alt="back button"
       class="back-button"
     />

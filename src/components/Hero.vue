@@ -4,7 +4,6 @@ import { onMounted } from "vue";
 import gsap from "gsap";
 import VueScrollTo from "vue-scrollto";
 import { useMq } from "vue3-mq";
-import arrowImage from "../assets/images/arrow.svg";
 import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
 
 defineProps({});
@@ -54,7 +53,12 @@ onMounted(() => {
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam.
     </p>
-    <img class="arrow" :src="arrowImage" alt="arrow" @click="goNext()" />
+    <img
+      class="arrow"
+      src="https://svamm-icros.vercel.app/assets/images/arrow.svg"
+      alt="arrow"
+      @click="goNext()"
+    />
   </section>
 </template>
 
@@ -66,7 +70,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../assets/images/hero.jpg");
+  background-image: url("https://svamm-icros.vercel.app/assets/images/hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: -600px center;

@@ -31,7 +31,10 @@ const toggle = () => {
     <img :src="props.next" alt="next" class="img2 animated-image" />
     <div class="caption-container" :class="{ expandable: props.expandable }">
       <button v-if="props.expandable" class="toggler" @click="toggle()">
-        <img src="../assets/images/fullscreen.svg" alt="expand/collapse" />
+        <img
+          src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
+          alt="expand/collapse"
+        />
       </button>
       <div class="text-container">
         <p v-if="props.caption" class="photo-caption">
@@ -45,7 +48,10 @@ const toggle = () => {
     <img :src="props.current" alt="full width picture" class="fullwidthimg" />
     <div class="caption-container">
       <button class="toggler" @click="toggle()">
-        <img src="../assets/images/fullscreen.svg" alt="expand/collapse" />
+        <img
+          src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
+          alt="expand/collapse"
+        />
       </button>
       <div class="text-container">
         <p v-if="props.caption" class="photo-caption">

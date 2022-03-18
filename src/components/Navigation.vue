@@ -24,7 +24,7 @@ const goTo = (index) => {
         <span v-if="active === index" class="text">
           {{ index === 0 ? "START" : item.year }}
         </span>
-        <img v-if="index === 0" src="../assets/images/bar.svg" alt="bar" />
+        <img v-if="index === 0" src="https://svamm-icros.vercel.app/assets/images/bar.svg" alt="bar" />
         <Dot v-if="index > 0" :active="active === index" />
       </li>
     </ul>

@@ -72,14 +72,20 @@ onMounted(() => {
           class="cta"
           @click="changeActive(item, index)"
         >
-          <img src="../assets/images/cross.svg" alt="cross" />
+          <img
+            src="https://svamm-icros.vercel.app/assets/images/cross.svg"
+            alt="cross"
+          />
         </button>
         <button
           v-if="state.active === index + 1"
           class="cta active"
           @click="reset()"
         >
-          <img src="../assets/images/minus.svg" alt="close" />
+          <img
+            src="https://svamm-icros.vercel.app/assets/images/minus.svg"
+            alt="close"
+          />
         </button>
       </div>
       <transition name="slide-fade">
@@ -106,7 +112,10 @@ onMounted(() => {
     </div>
     <div class="year-navigation-container">
       <div v-if="next" class="year-button" @click="goTo(contentIndex + 1)">
-        <img src="../assets/images/year-button.svg" alt="next year" />
+        <img
+          src="https://svamm-icros.vercel.app/assets/images/year-button.svg"
+          alt="next year"
+        />
         <span class="year">{{ next.year }}</span>
       </div>
     </div>
