@@ -3,6 +3,7 @@ import Content from "./Content.vue";
 import gsap from "gsap";
 import { reactive } from "vue";
 import VueScrollTo from "vue-scrollto";
+import FullScreenIcon from "./FullScreenIcon.vue";
 // eslint-disable-next-line no-undef
 const props = defineProps({
   item: { type: Object, default: () => {} },
@@ -41,7 +42,8 @@ const toggle = (id) => {
           <p class="photo-author">{{ props.author }}</p>
         </div>
         <button class="toggler" @click="toggle(item.id)">
-          <img src="../assets/images/fullscreen.svg" alt="expand/collapse" />
+          <!-- <img src="../assets/images/fullscreen.svg" alt="expand/collapse" /> -->
+          <FullScreenIcon />
         </button>
       </div>
     </div>

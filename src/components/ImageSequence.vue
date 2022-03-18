@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from "vue";
 import gsap from "gsap";
+import FullScreenIcon from "./FullScreenIcon.vue";
 // eslint-disable-next-line no-undef
 const props = defineProps({
   current: { type: String, default: "" },
@@ -22,6 +23,14 @@ const toggle = () => {
     opacity: state.open ? 1 : 0,
     zIndex: state.open ? 100 : 0,
   });
+
+  if (state.open) {
+    gsap.to("#firstArrow", { rotate: -90, y: 10, x: 2 });
+    gsap.to("#secondArrow", { rotate: 90, y: -1, x: 8 });
+  } else {
+    gsap.to("#firstArrow", { rotate: 90, y: -1, x: 8 });
+    gsap.to("#secondArrow", { rotate: -90, y: 10, x: 2 });
+  }
 };
 </script>
 
@@ -34,10 +43,11 @@ const toggle = () => {
       :class="{ expandable: props.expandable, hascaption: props.caption }"
     >
       <button v-if="props.expandable" class="toggler" @click="toggle()">
-        <img
+        <!-- <img
           src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
           alt="expand/collapse"
-        />
+        /> -->
+        <FullScreenIcon />
       </button>
       <div class="text-container">
         <p v-if="props.caption" class="photo-caption">
@@ -54,10 +64,11 @@ const toggle = () => {
     <div class="caption-container" :class="{ hascaption: props.caption }">
       <div class="full-width-button-and-caption">
         <button class="toggler" @click="toggle()">
-          <img
+          <!-- <img
             src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
             alt="expand/collapse"
-          />
+          /> -->
+          <FullScreenIcon />
         </button>
         <div class="text-container">
           <p v-if="props.caption" class="photo-caption">
@@ -163,7 +174,7 @@ const toggle = () => {
   .full-width-button-and-caption {
     display: flex;
     position: absolute;
-    left: 51.1%;    
+    left: 51.1%;
   }
 }
 </style>
