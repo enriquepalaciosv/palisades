@@ -32,7 +32,7 @@ const changeActive = (item, index) => {
 
 const reset = () => {
   state.active = 0;
-  emitter.emit("palisades:change-image", `section-${props.content.id}.png`);
+  emitter.emit("palisades:change-image", props.content.defaultImage);
 };
 
 onMounted(() => {

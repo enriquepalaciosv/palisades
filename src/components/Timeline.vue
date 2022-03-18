@@ -15,8 +15,8 @@ const emitter = internalInstance.appContext.config.globalProperties.emitter;
 
 const state = reactive({
   active: -1,
-  currentImage: "https://svamm-icros.vercel.app/assets/section-1.433a412a.png",
-  nextImage: "https://svamm-icros.vercel.app/assets/section-2.67a352e4.png",
+  currentImage: "https://svamm-icros.vercel.app/assets/images/section-1.png",
+  nextImage: "https://svamm-icros.vercel.app/assets/images/section-2.png",
   caption: "",
   author: "",
   expandable: false,
