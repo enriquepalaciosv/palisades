@@ -41,26 +41,32 @@ const toggle = () => {
       </button>
       <div class="text-container">
         <p v-if="props.caption" class="photo-caption">
-          {{ props.caption.toUpperCase() }}
+          {{ props.caption }}
         </p>
-        <p v-if="props.author" class="photo-author">{{ props.author }}</p>
+        <p v-if="props.author" class="photo-author">
+          {{ props.author.toUpperCase() }}
+        </p>
       </div>
     </div>
   </div>
   <div class="popup">
     <img :src="props.current" alt="full width picture" class="fullwidthimg" />
     <div class="caption-container" :class="{ hascaption: props.caption }">
-      <button class="toggler" @click="toggle()">
-        <img
-          src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
-          alt="expand/collapse"
-        />
-      </button>
-      <div class="text-container">
-        <p v-if="props.caption" class="photo-caption">
-          {{ props.caption.toUpperCase() }}
-        </p>
-        <p v-if="props.author" class="photo-author">{{ props.author }}</p>
+      <div class="full-width-button-and-caption">
+        <button class="toggler" @click="toggle()">
+          <img
+            src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
+            alt="expand/collapse"
+          />
+        </button>
+        <div class="text-container">
+          <p v-if="props.caption" class="photo-caption">
+            {{ props.caption }}
+          </p>
+          <p v-if="props.author" class="photo-author">
+            {{ props.author.toUpperCase() }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -124,6 +130,7 @@ const toggle = () => {
   align-items: flex-end;
   color: white;
   padding: 0 0 20px 20px;
+
   &.hascaption {
     background: linear-gradient(
       180deg,
@@ -143,13 +150,20 @@ const toggle = () => {
     justify-content: flex-end;
     align-items: flex-start;
     padding-bottom: 4px;
+    max-width: 600px;
 
     .photo-caption {
-      @apply font-condensed font-medium text-[14px] tracking-[0.88px] leading-[14px];
+      @apply font-caption font-medium text-[14px] tracking-[0.88px] leading-[18px];
     }
     .photo-author {
-      @apply font-caption text-[12px] tracking-[0px] leading-[16px] mt-[10px];
+      @apply font-condensed text-[12px] tracking-[0px] leading-[16px] mt-[10px];
     }
+  }
+
+  .full-width-button-and-caption {
+    display: flex;
+    position: absolute;
+    left: 51.1%;    
   }
 }
 </style>
