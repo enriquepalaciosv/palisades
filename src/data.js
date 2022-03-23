@@ -228,13 +228,6 @@ const wideBundle = [
     items: [
       {
         itemImage:
-          "https://svamm-icros.vercel.app/assets/images/section-11-2.png",
-        itemTitle: "2002. The Village at Squaw Valley",
-        itemDescription:
-          "Construction for the new base village at Squaw Valley begins, with the addition of lodging, restaurants, and shops at the base of the world-class ski resort.",
-      },
-      {
-        itemImage:
           "https://svamm-icros.vercel.app/assets/images/section-11-3.png",
         itemTitle: "2003. Squallywood The Book Published",
         itemDescription:
