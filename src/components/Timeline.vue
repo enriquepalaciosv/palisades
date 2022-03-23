@@ -46,7 +46,14 @@ const resetSubItems = () => {
   }, 1000);
 };
 
+const preloadImages = () => {
+  for (let i = 1; i < navigation.length; i++) {
+    const img = new Image();
+    img.src = `https://svamm-icros.vercel.app/assets/images/section-${i}.png`;
+  }
+};
 onMounted(() => {
+  preloadImages();
   gsap.registerPlugin(ScrollTrigger);
 
   // Overlap hero animation
