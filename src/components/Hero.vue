@@ -46,12 +46,12 @@ onMounted(() => {
       <lottie-animation path="palisades_animation.json" />
     </div>
 
-    <p class="main-headline">Milestones</p>
+    <p class="main-headline">History runs deep</p>
     <p class="secondary-headline">PALISADES TAHOE</p>
     <p class="hero-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
+      From the area’s first settlers to the birth of modern freeskiing and
+      beyond, this place has always been a land of legends—each generation
+      setting the stage for the achievements of the next.
     </p>
     <img
       class="arrow"
