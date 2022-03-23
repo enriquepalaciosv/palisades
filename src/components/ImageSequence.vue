@@ -165,10 +165,10 @@ const toggle = () => {
     max-width: 600px;
 
     .photo-caption {
-      @apply font-caption font-medium text-[14px] tracking-[0.88px] leading-[18px];
+      @apply font-caption font-medium text-[14px] tracking-[0.1px] leading-[18px];
     }
     .photo-author {
-      @apply font-condensed text-[12px] tracking-[0px] leading-[16px] mt-[10px];
+      @apply font-condensed text-[12px] tracking-[1px] leading-[16px] mt-[10px];
     }
   }
 
