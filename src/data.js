@@ -250,7 +250,8 @@ const wideBundle = [
     ],
   },
   {
-    defaultImage: "https://svamm-icros.vercel.app/assets/images/section-12.png",
+    defaultImage:
+      "http://svamm-icros.vercel.app/assets/images/section-12-collapsed.png",
     id: 12,
     year: 2011,
     title: "2011. The Two Ski Areas Unite",
@@ -259,6 +260,8 @@ const wideBundle = [
     caption: "Aerial view of Palisades Tahoe soon to be connected by a gondola",
     author: "Matt Palmer",
     expandable: true,
+    expandedImage:
+      "https://svamm-icros.vercel.app/assets/images/section-12.png",
   },
   {
     defaultImage: "https://svamm-icros.vercel.app/assets/images/section-13.png",

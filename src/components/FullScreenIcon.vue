@@ -16,12 +16,12 @@ defineProps({});
     <defs>
       <circle id="path-1" cx="20" cy="20" r="20"></circle>
       <filter
+        id="filter-2"
         x="-40.0%"
         y="-27.5%"
         width="180.0%"
         height="180.0%"
         filterUnits="objectBoundingBox"
-        id="filter-2"
       >
         <feOffset
           dx="0"
@@ -93,14 +93,14 @@ defineProps({});
                 ></circle>
               </g>
               <path
-                d="M28,28 L26,28 L26,22 L20,22 L20,20 L28,20 L28,28 Z"
                 id="firstArrow"
+                d="M28,28 L26,28 L26,22 L20,22 L20,20 L28,20 L28,28 Z"
                 fill="#FFFFFF"
                 transform="translate(24.000000, 24.000000) rotate(-270.000000) translate(-24.000000, -24.000000) "
               ></path>
               <path
-                d="M20,20 L18,20 L18,14 L12,14 L12,12 L20,12 L20,20 Z"
                 id="secondArrow"
+                d="M20,20 L18,20 L18,14 L12,14 L12,12 L20,12 L20,20 Z"
                 fill="#FFFFFF"
                 transform="translate(16.000000, 16.000000) rotate(-90.000000) translate(-16.000000, -16.000000) "
               ></path>

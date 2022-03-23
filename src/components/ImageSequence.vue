@@ -10,6 +10,7 @@ const props = defineProps({
   caption: { type: String, default: "" },
   author: { type: String, default: "" },
   expandable: { type: Boolean, default: false },
+  expandedimage: { type: String, default: "" },
 });
 
 const state = reactive({
@@ -60,14 +61,14 @@ const toggle = () => {
     </div>
   </div>
   <div class="popup">
-    <img :src="props.current" alt="full width picture" class="fullwidthimg" />
+    <img
+      :src="props.expandedimage"
+      alt="full width picture"
+      class="fullwidthimg"
+    />
     <div class="caption-container" :class="{ hascaption: props.caption }">
       <div class="full-width-button-and-caption">
         <button class="toggler" @click="toggle()">
-          <!-- <img
-            src="https://svamm-icros.vercel.app/assets/images/fullscreen.svg"
-            alt="expand/collapse"
-          /> -->
           <FullScreenIcon />
         </button>
         <div class="text-container">

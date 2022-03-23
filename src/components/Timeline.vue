@@ -20,6 +20,7 @@ const state = reactive({
   caption: "",
   author: "",
   expandable: false,
+  expandedimage: "",
 });
 
 const playTransition = (image) => {
@@ -86,6 +87,7 @@ onMounted(() => {
         state.caption = item.caption;
         state.author = item.author;
         state.expandable = item.expandable;
+        state.expandedimage = item.expandedImage;
       },
       onLeaveBack: () => {
         state.active = index - 1;
@@ -97,6 +99,7 @@ onMounted(() => {
           state.caption = navigation[index - 1].caption;
           state.author = navigation[index - 1].author;
           state.expandable = navigation[index - 1].expandable;
+          state.expandedimage = navigation[index - 1].expandedImage;
         }
       },
     });
@@ -125,6 +128,7 @@ onMounted(() => {
       :caption="state.caption"
       :author="state.author"
       :expandable="state.expandable"
+      :expandedimage="state.expandedimage"
     />
   </div>
 
