@@ -37,8 +37,18 @@ const toggle = () => {
 
 <template>
   <div :class="`right-content${position ? '-' + position : ''}`">
-    <img :src="props.current" alt="current" class="animated-image" />
-    <img :src="props.next" alt="next" class="img2 animated-image" />
+    <img
+      :src="props.current"
+      alt="current"
+      class="animated-image"
+      rel="preload"
+    />
+    <img
+      :src="props.next"
+      alt="next"
+      class="img2 animated-image"
+      rel="preload"
+    />
     <div
       class="caption-container"
       :class="{ expandable: props.expandable, hascaption: props.caption }"

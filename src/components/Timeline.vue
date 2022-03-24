@@ -47,7 +47,7 @@ const resetSubItems = () => {
 };
 
 const preloadImages = () => {
-  for (let i = 1; i < navigation.length; i++) {
+  for (let i = 1; i <= navigation.length; i++) {
     const img = new Image();
     img.src = `https://svamm-icros.vercel.app/assets/images/section-${i}.png`;
   }
@@ -83,7 +83,7 @@ onMounted(() => {
     const shouldAnimate = !notAnimated.find((na) => section === na);
     ScrollTrigger.create({
       trigger: `#tl-section-${section}`,
-      start: "top 80%",
+      start: "top 50%",
       markers: false,
       onEnter: () => {
         state.active = index;
