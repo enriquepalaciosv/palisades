@@ -78,10 +78,14 @@ onMounted(() => {
     background-position: center;
   }
   .animation {
-    width: 50%;
+    width: 100%;
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+    }
   }
   .main-headline {
     @apply font-headline text-orange text-[50px] tracking-[-0.29px] leading-[61px] lg:text-[175px] lg:tracking-[-1px] lg:leading-[212px];
+    text-align: center;
   }
 
   .secondary-headline {
@@ -100,6 +104,10 @@ onMounted(() => {
   .arrow {
     margin-top: 56px;
     cursor: pointer;
+  }
+
+  .hero-text {
+    padding: 0 24px;
   }
 }
 </style>
