@@ -1,4 +1,4 @@
-const firstBundle = [
+const navigation = [
   {
     defaultImage: "https://svamm-icros.vercel.app/assets/images/section-1.png",
     id: 1,
@@ -8,7 +8,6 @@ const firstBundle = [
       "An indigenous Native American people, the Washoe Tribe inhabited lands around Lake Tahoe dating back thousands of years. They hunted, gathered, and traveled on hand-hewn snowshoes in the winter months. Their tribe name comes from the Washoe word, Wašiw, meaning “people from here.” The Washoe first called Lake Tahoe “Da ow ga,” the Washoe word for “lake,” which is thought to be the source for the name Lake Tahoe. Da ow aga is central to the tribe’s identity and is still considered the tribe’s most sacred place.",
     caption: "",
     author: "",
-
     items: [
       {
         itemTitle: "1844. Western Migration",
@@ -109,38 +108,34 @@ const firstBundle = [
       "Kevin Andrews drops into the Chimney Sweep on Palisades ultimate proving grounds.",
     author: "Larry Prosor",
   },
-];
-
-const firstWide = {
-  defaultImage: "https://svamm-icros.vercel.app/assets/images/section-7.png",
-  id: 7,
-  year: 1975,
-  caption: "Early days of Snowboarding",
-  author: "Larry Prosor",
-  expandable: false,
-  items: [
-    {
-      itemImage: "https://svamm-icros.vercel.app/assets/images/section-7.png",
-      itemTitle: "1975. The Controversy of Silverado Lift",
-      itemDescription:
-        "A new master plan includes the construction of two new chairlifts above Shirley Canyon: Solitude and Silverado. Over the ensuing years, conflict arises over the building of Silverado in an area many consider to be pristine wilderness, but Cushing presses on. In 1989, Cushing orders the project to move forward, and a large stand of old-growth forest is cut down over one weekend without regulatory approval. The ensuing lawsuits and controversy both burnish and tarnish Cushing’s reputation, incurring penalties and court-imposed limits that result in operational compromises to this day. Silverado did become a legendary lift, with steep cliffs and chutes accessible only via designated gates and only during its limited operating season.",
-    },
-    {
-      itemImage: "https://svamm-icros.vercel.app/assets/images/section-7.png",
-      itemTitle: "1982. Avalanche at Alpine Meadows",
-      itemDescription:
-        "On March 31, 1982, a late-season storm dumps nearly 90 inches of snow in four days. Avalanche conditions are so extreme that Alpine Meadows mountain manager Bernie Kingery closes the mountain to everyone, including employees. When a series of massive avalanches break along Alpine’s northeast ridge, it destroys the Summit Terminal building, where Kingery and others are holding up, as well as portions of the parking lot. Seven people, including Kingery, are tragically killed. One employee, Anna Conrad, survives after spending five days buried in a locker room. To date, Palisades Tahoe has one of the most extensive avalanche mitigation regimens of any ski resort in the world, but the threat of avalanche remains ever-present.",
-    },
-    {
-      itemImage: "https://svamm-icros.vercel.app/assets/images/section-7.png",
-      itemTitle: "1986-1996. Ski Resorts Open Doors to Snowboarders",
-      itemDescription:
-        "Since the new sport of snowboarding still wasn’t allowed at ski resorts, Tahoe area snowboarders Mark Anolik, Bob Klein, Terry Kidwell, and others found a natural halfpipe alongside the town landfill in Tahoe City and created snowboarding’s first-ever snow halfpipe.. Palisades Tahoe began permitting snowboarders during its night skiing sessions starting in 1986, making it one of the earlier resorts to allow the radical sport of snowboarding. (Alpine Meadows held out until 1997.) Snowboard film companies like Mack Dawg Productions and Standard Films eventually puts Palisades Tahoe on the map in snowboarding circles.",
-    },
-  ],
-};
-
-const secondBundle = [
+  {
+    defaultImage: "https://svamm-icros.vercel.app/assets/images/section-7.png",
+    id: 7,
+    year: 1975,
+    caption: "Early days of Snowboarding",
+    author: "Larry Prosor",
+    expandable: false,
+    items: [
+      {
+        itemImage: "https://svamm-icros.vercel.app/assets/images/section-7.png",
+        itemTitle: "1975. The Controversy of Silverado Lift",
+        itemDescription:
+          "A new master plan includes the construction of two new chairlifts above Shirley Canyon: Solitude and Silverado. Over the ensuing years, conflict arises over the building of Silverado in an area many consider to be pristine wilderness, but Cushing presses on. In 1989, Cushing orders the project to move forward, and a large stand of old-growth forest is cut down over one weekend without regulatory approval. The ensuing lawsuits and controversy both burnish and tarnish Cushing’s reputation, incurring penalties and court-imposed limits that result in operational compromises to this day. Silverado did become a legendary lift, with steep cliffs and chutes accessible only via designated gates and only during its limited operating season.",
+      },
+      {
+        itemImage: "https://svamm-icros.vercel.app/assets/images/section-7.png",
+        itemTitle: "1982. Avalanche at Alpine Meadows",
+        itemDescription:
+          "On March 31, 1982, a late-season storm dumps nearly 90 inches of snow in four days. Avalanche conditions are so extreme that Alpine Meadows mountain manager Bernie Kingery closes the mountain to everyone, including employees. When a series of massive avalanches break along Alpine’s northeast ridge, it destroys the Summit Terminal building, where Kingery and others are holding up, as well as portions of the parking lot. Seven people, including Kingery, are tragically killed. One employee, Anna Conrad, survives after spending five days buried in a locker room. To date, Palisades Tahoe has one of the most extensive avalanche mitigation regimens of any ski resort in the world, but the threat of avalanche remains ever-present.",
+      },
+      {
+        itemImage: "https://svamm-icros.vercel.app/assets/images/section-7.png",
+        itemTitle: "1986-1996. Ski Resorts Open Doors to Snowboarders",
+        itemDescription:
+          "Since the new sport of snowboarding still wasn’t allowed at ski resorts, Tahoe area snowboarders Mark Anolik, Bob Klein, Terry Kidwell, and others found a natural halfpipe alongside the town landfill in Tahoe City and created snowboarding’s first-ever snow halfpipe.. Palisades Tahoe began permitting snowboarders during its night skiing sessions starting in 1986, making it one of the earlier resorts to allow the radical sport of snowboarding. (Alpine Meadows held out until 1997.) Snowboard film companies like Mack Dawg Productions and Standard Films eventually puts Palisades Tahoe on the map in snowboarding circles.",
+      },
+    ],
+  },
   {
     defaultImage: "https://svamm-icros.vercel.app/assets/images/section-8.png",
     id: 8,
@@ -211,9 +206,6 @@ const secondBundle = [
       },
     ],
   },
-];
-
-const wideBundle = [
   {
     defaultImage: "https://svamm-icros.vercel.app/assets/images/section-11.png",
     id: 11,
@@ -287,73 +279,56 @@ const wideBundle = [
       },
     ],
   },
+  {
+    defaultImage: "https://svamm-icros.vercel.app/assets/images/section-14.png",
+    id: 14,
+    year: 2017,
+    title: "2017. World Cup Hosted",
+    description:
+      "Our mountain hosts a women’s World Cup race for the first time in 19 years. The U.S. Ski and Snowboard Association also designates the mountain as an official training site. To date, the resort has sent 64 athletes (and counting) to the U.S. Ski and Snowboard Team and more than two dozen athletes to the Olympics, including legendary names like Eric, Sandra, and Wayne Poulsen, Jimmie Heuga, Bill Hudson, Tamara McKinney, Nate Holland, Daron Rahlves, Shannon Bahrke, Jonny Moseley, Julia Mancuso, Marco Sullivan, Travis Ganong, Bryce Bennett, Keely Cashman, AJ Hurt,and more.",
+    caption: "Mikaela Shiffrin, 2017 Womens World Cup",
+    author: "Jon Margolis",
+  },
+  {
+    defaultImage: "https://svamm-icros.vercel.app/assets/images/section-15.png",
+    id: 15,
+    year: 2018,
+    caption:
+      "Scott Gaffney wins the Fingers race off KT22 and jumps off Main Air.",
+    author: "Kate Abraham",
+    expandable: false,
+    items: [
+      {
+        itemImage:
+          "https://svamm-icros.vercel.app/assets/images/section-15-2.png",
+        itemTitle: "2018. Introducing the Ikon Pass",
+        itemDescription:
+          "In January 2018, the newly formed Alterra Mountain Company announces a new collective season pass, called the Ikon Pass, that offers access to 23 ski resorts across nine states and three Canadian provinces, including unlimited access to our resort. The number of destinations on the Ikon Pass has continued to grow since then.",
+      },
+      {
+        itemImage:
+          "https://svamm-icros.vercel.app/assets/images/section-15-3.png",
+        itemTitle: "2019. Treeline Cirque Provides Access to the Backside",
+        itemDescription:
+          "Alpine Meadows opens Treeline Cirque, a new high-speed quad chairlift that transports skiers and riders to the backside of the mountain in five minutes, a journey that previously took multiple chairlifts or a hike over the High Traverse. That year, 2019, also brings a record-breaking snowfall in February: The mountains receive over 313 inches of snow that month alone, a new monthly record that coins the term #februBURIED.",
+      },
+      {
+        itemImage:
+          "https://svamm-icros.vercel.app/assets/images/section-15-4.png",
+        itemTitle: "2021. Name is changed to Palisades Tahoe",
+        itemDescription:
+          "After many years of considering a name change due to the etymology of a derogatory and offensive term for Native American women, the resort commences on a name changing initiative. After involving extensive community feedback and working with the local Washoe Tribe, both mountains fall under new name: Palisades Tahoe.",
+      },
+      // {
+      //   itemImage:
+      //     "https://svamm-icros.vercel.app/assets/images/section-15-5.png",
+      //   itemTitle: "2021. Base-to-Base Gondola Installed",
+      //   itemDescription:
+      //     "Construction begins on the historic base-to-base gondola that will at long last connect the two neighboring resorts. The gondola will travel roughly 2.2 miles in approximately 15 minutes and will include two mid-stations, including one at the top of KT-22.",
+      // },
+    ],
+  },
 ];
 
-const lastSingle = {
-  defaultImage: "https://svamm-icros.vercel.app/assets/images/section-14.png",
-  id: 14,
-  year: 2017,
-  title: "2017. World Cup Hosted",
-  description:
-    "Our mountain hosts a women’s World Cup race for the first time in 19 years. The U.S. Ski and Snowboard Association also designates the mountain as an official training site. To date, the resort has sent 64 athletes (and counting) to the U.S. Ski and Snowboard Team and more than two dozen athletes to the Olympics, including legendary names like Eric, Sandra, and Wayne Poulsen, Jimmie Heuga, Bill Hudson, Tamara McKinney, Nate Holland, Daron Rahlves, Shannon Bahrke, Jonny Moseley, Julia Mancuso, Marco Sullivan, Travis Ganong, Bryce Bennett, Keely Cashman, AJ Hurt,and more.",
-  caption: "Mikaela Shiffrin, 2017 Womens World Cup",
-  author: "Jon Margolis",
-};
-const lastWide = {
-  defaultImage: "https://svamm-icros.vercel.app/assets/images/section-15.png",
-  id: 15,
-  year: 2018,
-  caption:
-    "Scott Gaffney wins the Fingers race off KT22 and jumps off Main Air.",
-  author: "Kate Abraham",
-  expandable: false,
-  items: [
-    {
-      itemImage:
-        "https://svamm-icros.vercel.app/assets/images/section-15-2.png",
-      itemTitle: "2018. Introducing the Ikon Pass",
-      itemDescription:
-        "In January 2018, the newly formed Alterra Mountain Company announces a new collective season pass, called the Ikon Pass, that offers access to 23 ski resorts across nine states and three Canadian provinces, including unlimited access to our resort. The number of destinations on the Ikon Pass has continued to grow since then.",
-    },
-    {
-      itemImage:
-        "https://svamm-icros.vercel.app/assets/images/section-15-3.png",
-      itemTitle: "2019. Treeline Cirque Provides Access to the Backside",
-      itemDescription:
-        "Alpine Meadows opens Treeline Cirque, a new high-speed quad chairlift that transports skiers and riders to the backside of the mountain in five minutes, a journey that previously took multiple chairlifts or a hike over the High Traverse. That year, 2019, also brings a record-breaking snowfall in February: The mountains receive over 313 inches of snow that month alone, a new monthly record that coins the term #februBURIED.",
-    },
-    {
-      itemImage:
-        "https://svamm-icros.vercel.app/assets/images/section-15-4.png",
-      itemTitle: "2021. Name is changed to Palisades Tahoe",
-      itemDescription:
-        "After many years of considering a name change due to the etymology of a derogatory and offensive term for Native American women, the resort commences on a name changing initiative. After involving extensive community feedback and working with the local Washoe Tribe, both mountains fall under new name: Palisades Tahoe.",
-    },
-    // {
-    //   itemImage:
-    //     "https://svamm-icros.vercel.app/assets/images/section-15-5.png",
-    //   itemTitle: "2021. Base-to-Base Gondola Installed",
-    //   itemDescription:
-    //     "Construction begins on the historic base-to-base gondola that will at long last connect the two neighboring resorts. The gondola will travel roughly 2.2 miles in approximately 15 minutes and will include two mid-stations, including one at the top of KT-22.",
-    // },
-  ],
-};
-
-const navigation = [
-  ...firstBundle,
-  { ...firstWide },
-  ...secondBundle,
-  ...wideBundle,
-  { ...lastSingle },
-  { ...lastWide },
-];
-export {
-  firstBundle,
-  firstWide,
-  secondBundle,
-  wideBundle,
-  lastSingle,
-  lastWide,
-  navigation,
-};
+export { navigation };
 export default {};
