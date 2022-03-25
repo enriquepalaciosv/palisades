@@ -84,7 +84,7 @@ onMounted(() => {
     }
   }
   .main-headline {
-    @apply font-headline text-orange text-[50px] tracking-[-0.29px] leading-[61px] lg:text-[175px] lg:tracking-[-1px] lg:leading-[212px];
+    @apply font-headline text-orange text-[50px] tracking-[-0.29px] leading-[61px] lg:text-[150px] lg:tracking-[-1px] lg:leading-[212px];
     text-align: center;
   }
 
